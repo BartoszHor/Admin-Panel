@@ -1,0 +1,78 @@
+.header {
+  position: fixed;
+  width: 100%;
+
+  &__wrapper {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: $header-size;
+    background-color: $color-light;
+    line-height: 70px;
+    flex-wrap: wrap;
+
+    &__wallet {
+      border-left: $header-border-style;
+    }
+
+    &__amount-of-cash {
+      margin: 0;
+      font-weight: 700;
+      opacity: 0.6;
+      color: transparent;
+      text-shadow: 0 0 1px $color-dark;
+    }
+
+    &__arrow-down {
+      align-self: center;
+      border-right: $header-border-style;
+    }
+
+    &__icon-notification {
+      border-right: $header-border-style;
+      position: relative;
+      &::after {
+        content: '';
+        width: 7px;
+        height: 7px;
+        background-color: gold;
+        position: absolute;
+        border-radius: 50%;
+        top: 35%;
+        left: 50%;
+      }
+    }
+
+    &__icon-personaldata {
+      position: relative;
+      &::after {
+        content: '';
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        border-radius: 50%;
+        top: 34%;
+        left: 28%;
+        border: 1px solid black;
+        opacity: 0.5;
+
+      }
+    }
+
+    &__author-name {
+      color: blue;
+      padding-left: 0;
+      margin: 0;
+      display: inline-block;
+    }
+  }
+}
+
+.sidebar {
+  top: 0;
+  left: 0;
+  position: fixed;
+  height: 100vh;
+  background-color: $color-dark;
+  min-width: 100px;
+}
