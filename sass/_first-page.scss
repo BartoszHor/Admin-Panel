@@ -301,10 +301,14 @@
     justify-content: center;
     align-content: center;
     flex-wrap: wrap;
+    p:last-of-type {
+      border-bottom: $border-dark-style;
+    }
     &__btn {
-      flex-basis: 120px;
+      justify-content: center;
+      flex-basis: 130px;
       text-align: center;
-      margin: 20px auto;
+      margin: 40px auto;
       padding: 10px;
       border-radius: $radius;
       text-decoration: none;
@@ -319,6 +323,45 @@
       &:hover {
         color: orange;
         background-position: 100% 0%;
+      }
+    }
+    &__link {
+      flex-basis: 95%;
+      display: flex;
+      justify-content: center;
+      border-top: $border-dark-style;
+      color: $font-color;
+      font-weight: $font-bold;
+      height: 50px;
+      line-height: 50px;
+      margin: 0 auto 0 auto;
+      transition: $transition;
+      i:nth-child(3){
+        color: orange;
+      }
+      &:hover {
+        background-color: lighten($color-dark, 70%);
+        color: lighten($color-dark, 10%)
+      }
+      &:hover .link-icon {
+        transform: scale(1);
+      }
+      .link-name {
+        flex-grow: 6;
+        display: inline;
+        margin-left: 20px;
+      }
+      span {
+        flex-grow: 4;
+        a {
+          text-decoration: none;
+          font-weight: $font-semibold;
+        }
+      }
+      .link-icon {
+        flex-grow: 0.5;
+        transition: $transition;
+        transform: scale(0);
       }
     }
   }
