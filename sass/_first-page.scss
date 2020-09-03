@@ -6,6 +6,7 @@
   left: 0;
   width: 100%;
   border-bottom: $header-border-style;
+  z-index: 2;
 
   &__wrapper {
     display: flex;
@@ -81,6 +82,7 @@
   height: 100vh;
   background-color: $color-dark;
   min-width: 100px;
+  z-index: 3;
 
   &__header {
     color: $color-light;
@@ -90,7 +92,7 @@
   }
 
   &__burger {
-    color: lighten($color-dark, 60%);
+    color: $font-color;
     font-size: 1.5rem;
     &:hover {
       color: $color-light;
@@ -99,7 +101,7 @@
 
   &__list {
     list-style-type: none;
-    color: lighten($color-dark, 60%);
+    color: $font-color;
     padding: 0 0 20px 10px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
     &__item {
@@ -132,7 +134,7 @@
     }
   }
   &__manager {
-    color: lighten($color-dark, 60%);
+    color: $font-color;
     text-align: center;
     letter-spacing: 1px;
   }
@@ -146,7 +148,7 @@
     justify-content: center;
     p {
       position: relative;
-      color: lighten($color-dark, 60%);
+      color: $font-color;
       &::after {
         content: '';
         width: 10px;
@@ -162,11 +164,163 @@
   }
 }
 
+/* Main content */
+
 .main-wrapper {
-  position: fixed;
-  top: 90px;
-  left: 225px;
-  margin: 0 20px 20px 0;
-  background-color: white
+  margin-left: 240px;
+  margin-top: 100px;
+  margin: 90px 10px 20px 225px;
+  background-color: white;
+  &__post {
+
+    .article-header {
+      color: $font-color-dark;
+      border-bottom: $border-dark-style;
+      padding: 10px 0 10px 20px;
+      font-weight: $font-bold;
+    }
+    &__datePicker {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100px;
+      border-bottom: $border-dark-style;
+      .icon-calendar {
+        vertical-align: middle;
+        line-height: 40px;
+        border: $border-dark-style;
+        border-left: none;
+        cursor: pointer;
+      }
+      &__refresh {
+        color: $color-light;
+        padding: 10px 15px;
+        margin-left: 10px;
+        background-color: orange;
+        border-radius: $radius;
+        transition: $transition;
+        cursor: pointer;
+        &:hover {
+          background-color: $color-light;
+          color: orange;
+        }
+      }
+
+      input {
+        border: $border-dark-style;
+        position: relative;
+        text-align: center;
+        padding: 12px 5px;
+        overflow: hidden;
+        z-index: 0;
+        &:nth-child(2){
+          border-left: none;
+          border-right: none;
+        }
+        &:focus {
+          outline-width: 0;
+        }
+      }
+    }
+    &__details {
+      display: flex;
+      justify-content: space-around;
+      align-content: center;
+      flex-wrap: wrap;
+      height: 200px;
+      margin: 40px 0;
+      p:nth-child(5){
+          flex-basis: 84%;
+          margin-top: 40px;
+          color: $font-color-dark;
+          font-weight: $font-bold;
+
+        }
+      &__list {
+        flex-basis: 34%;
+        color: $font-color;
+        font-weight: $font-bold;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: $border-dark-style;
+        span {
+          color: black;
+          font-weight: $font-semibold;
+        }
+      }
+    }
+    &__chart {
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      flex-wrap: wrap;
+      p:nth-child(2){
+        flex-basis: 90px;
+        &::after {
+          background-color: lighten(orange, 20%);
+        }
+      }
+      p:nth-child(3){
+        flex-basis: 100px;
+        background-color: $color-light;
+        &::after {
+          background-color: lighten(green, 20%);
+        }
+      }
+      img {
+        width: 85%;
+        padding: 0 0 40px 0;
+      }
+      &__legend {
+        flex-basis: 120px;
+        padding: 8px 20px;
+        background-color: lighten($color-dark, 70%);
+        border-radius: $radius;
+        text-align: center;
+        position: relative;
+        margin: 0 20px 40px 0;
+        &::after {
+        content: '';
+          width: 15px;
+          height: 15px;
+          background-color: lighten(blue, 20%);
+          position: absolute;
+          border-radius: 50%;
+          top: 32%;
+          left: 10%;
+        }
+      }
+    }
+  }
+}
+
+.second-wrapper {
+  margin-top: 20px;
+  .main-wrapper__links__content {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    &__btn {
+      flex-basis: 120px;
+      text-align: center;
+      margin: 20px auto;
+      padding: 10px;
+      border-radius: $radius;
+      text-decoration: none;
+      cursor: pointer;
+      border: 2px solid;
+      background-position: 0% 100%;
+      background-size: 250%;
+      transition: $transition;
+      border-color: orange;
+      color: white;
+      background-image: linear-gradient(45deg, orange 50%, transparent 50%);
+      &:hover {
+        color: orange;
+        background-position: 100% 0%;
+      }
+    }
+  }
 }
 

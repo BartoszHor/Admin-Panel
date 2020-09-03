@@ -1,3 +1,4 @@
+
 .p1 {
   padding: 0 15px;
 }
@@ -5,3 +6,14 @@
 .p2 {
   padding: 0 30px;
 }
+
+/*Component classes*/
+
+.article-header {
+  color: $font-color-dark;
+  border-bottom: $border-dark-style;
+  padding: 10px 0 10px 20px;
+  font-weight: $font-bold;
+}
+
+
