@@ -429,7 +429,7 @@
 
   .link-name {
     font-size: 0.7rem;
-    max-width: 80px;
+    max-width: 80 px;
   }
   .span-link {
     font-size: 0.6rem;
@@ -621,9 +621,14 @@
     }
   }
 }
-@media(min-width: 769px){
-
+@media(min-width: 577px) and (max-width: 755px) {
+  .sidebar {
+    min-width: 100px;
+    display: block;
+    z-index: 4;
+  }
 }
+
 @media(min-width: 993px) {
 
 }

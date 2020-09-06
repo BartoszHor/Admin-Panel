@@ -20,17 +20,27 @@ for(let datePicker of datePickers){
 }
 
 function openCloseSidebar() {
-  if(screen.width < 750) {
-    return;
-  } else {
-    const sidebar = document.querySelector('.sidebar');
-    if(sidebar.style.display == 'block') {
-      sidebar.style.display = 'none';
-    } else {
-      sidebar.style.display = 'block';
+  let sidebar = document.querySelector('.sidebar');
+  if (sidebar.style.display == 'block') {
+    sidebar.style.display = 'none'
+    let size = document.body.clientWidth
+    if (size >= 737) {
+      sidebar.style.display = 'block'
     }
+  } else {
+    sidebar.style.display = 'block';
   }
 }
+
+function showSidebar() {
+  let size = document.body.clientWidth;
+  if (size >= 737) {
+    let sidebar = document.querySelector('.sidebar');
+    sidebar.style.display = 'block'
+  }
+
+}
+
 
 const sidebarIcon = document.querySelector('.icon-arrow-right');
 sidebarIcon.addEventListener('click', openCloseSidebar);
