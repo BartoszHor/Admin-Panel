@@ -19,15 +19,29 @@ for(let datePicker of datePickers){
   datePicker.value = formatDate(new Date());
 }
 
-function activatePage() {
+function activatePage(pageId) {
   let mainPages = document.querySelectorAll('.main-wrapper')
   for (let page of mainPages) {
-    if (page.id == 1) {
+    if (page.id == pageId) {
       page.classList.add('active')
     }
   }
 }
-activatePage()
+
+function initPage() {
+  let pages = document.querySelectorAll('.main-wrapper')
+  const idFromHash = window.location.hash.replace('#', '')
+  let pageMatchingHash = 1
+  for (let page of pages) {
+    if(page.id == idFromHash){
+      pageMatchingHash = page.id
+      break;
+    }
+  }
+  activatePage(pageMatchingHash)
+}
+initPage()
+
 
 /* Sidebar functions */
 
@@ -65,6 +79,7 @@ const clickedElement = this
 let mainSections = document.querySelectorAll('.main-wrapper')
 for (let section of mainSections) {
     section.classList.toggle('active', section.id == clickedElement.id)
+    window.location.hash = clickedElement.id
   }
 }
 

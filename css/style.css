@@ -900,7 +900,7 @@ template {
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
-.second-wrapper .main-wrapper__links__content__btn {
+.second-wrapper .main-wrapper__links__content__btn, .second-wrapper .main-wrapper__links__content .btn {
   -ms-flex-pack: center;
       justify-content: center;
   -ms-flex-preferred-size: 130px;
@@ -920,7 +920,7 @@ template {
   background-image: linear-gradient(45deg, orange 50%, transparent 50%);
 }
 
-.second-wrapper .main-wrapper__links__content__btn:hover {
+.second-wrapper .main-wrapper__links__content__btn:hover, .second-wrapper .main-wrapper__links__content .btn:hover {
   color: orange;
   background-position: 100% 0%;
 }
@@ -982,6 +982,64 @@ template {
       flex-grow: 0.5;
   transition: all 0.5s;
   transform: scale(0);
+}
+
+/* Personal details */
+form {
+  padding-top: 30px;
+}
+
+form div:nth-child(4) {
+  padding-bottom: 30px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+form div:nth-child(5) {
+  padding-top: 30px;
+}
+
+form div:nth-child(7) {
+  padding-bottom: 30px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+form div:nth-child(8) {
+  padding-top: 30px;
+}
+
+form div:nth-child(9) {
+  padding-bottom: 30px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+form div:nth-child(10) {
+  padding: 30px 0 20px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+form .form__row {
+  display: -ms-flexbox;
+  display: flex;
+}
+
+form .form__row__name {
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+  text-align: right;
+  padding-right: 5%;
+  color: gray;
+  font-weight: 700;
+}
+
+form .form__row__input {
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+  text-align: left;
+}
+
+form .form__row__input .form-input {
+  height: 35px;
+  width: 200px;
 }
 
 /* Media queries */
@@ -1099,9 +1157,43 @@ template {
   .sidebar__manager {
     font-size: 0.7rem;
   }
+  form .form__row {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  form .form__row__name {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    text-align: center;
+    padding-right: 0;
+    margin: 0 0 1% 0;
+  }
+  form .form__row__input {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    text-align: center;
+    margin: 0 0 1% 0;
+  }
 }
 
 @media (min-width: 577px) and (max-width: 755px) {
+  .smth {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .smth .name {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    text-align: center;
+    padding-right: 0;
+    margin: 1% 0 1% 0;
+  }
+  .smth .input {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    text-align: center;
+    margin: 1% 0 1% 0;
+  }
   .icon-close {
     font-size: 17px;
     color: white;
@@ -1187,6 +1279,23 @@ template {
   }
   .sidebar__manager {
     font-size: 0.7rem;
+  }
+  form .form__row {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  form .form__row__name {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    text-align: center;
+    padding-right: 0;
+    margin: 0 0 1% 0;
+  }
+  form .form__row__input {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    text-align: center;
+    margin: 0 0 1% 0;
   }
 }
 

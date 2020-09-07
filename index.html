@@ -29,13 +29,13 @@
         <i class="icon-close"></i>
         <i class="fas fa-bars sidebar__burger p1"></i>
         <ul class="sidebar__list">
-          <li class="sidebar__list__item"><a href="#" id="1"> <i class="icon-general header__wrapper__icon-quit p2"></i> General </a></li>
-          <li class="sidebar__list__item"><a href="#" id="4"> <i class="icon-details header__wrapper__icon-quit p2"></i> Details </a></li>
-          <li class="sidebar__list__item"><a href="#" id="2"> <i class="icon-links header__wrapper__icon-quit p2"></i> Links </a></li>
-          <li class="sidebar__list__item"><a href="#" id="3"> <i class="icon-banners header__wrapper__icon-quit p2"></i> Banners </a></li>
-          <li class="sidebar__list__item"><a href="#" id="5"> <i class="icon-personaldata header__wrapper__icon-quit p2"></i> Personal Data </a></li>
-          <li class="sidebar__list__item"><a href="#" id="6"> <i class="icon-payout header__wrapper__icon-quit p2"></i> Payout </a><li>
-          <li class="sidebar__list__item"><a href="#" id="7"> <i class="icon-postback header__wrapper__icon-quit p2"></i> Postback </a> </li>
+          <li class="sidebar__list__item"><a href="#general" id="1"> <i class="icon-general header__wrapper__icon-quit p2"></i> General </a></li>
+          <li class="sidebar__list__item"><a href="#details" id="5"> <i class="icon-details header__wrapper__icon-quit p2"></i> Details </a></li>
+          <li class="sidebar__list__item"><a href="#links" id="2"> <i class="icon-links header__wrapper__icon-quit p2"></i> Links </a></li>
+          <li class="sidebar__list__item"><a href="#banners" id="3"> <i class="icon-banners header__wrapper__icon-quit p2"></i> Banners </a></li>
+          <li class="sidebar__list__item"><a href="#personal-data" id="4"> <i class="icon-personaldata header__wrapper__icon-quit p2"></i> Personal Data </a></li>
+          <li class="sidebar__list__item"><a href="#payout" id="6"> <i class="icon-payout header__wrapper__icon-quit p2"></i> Payout </a><li>
+          <li class="sidebar__list__item"><a href="#postback" id="7"> <i class="icon-postback header__wrapper__icon-quit p2"></i> Postback </a> </li>
         </ul>
         <p class="sidebar__manager">YOUR MANAGER</p>
         <div class="sidebar__manager__wrapper">
@@ -139,7 +139,7 @@
               <a href="#" class="main-wrapper__links__content__btn"> + Add new </a>
             </div>
             <p class="main-wrapper__links__content__link">
-              <span class="link-name">Front banner</span><span class="span-link"><a href="#"> http://www.banner/front.gif</a>      </span>
+              <span class="link-name">Front banner</span><span class="span-link"><a href="#"> http://www.banner/front.gif</a></span>
                 <i class="icon-links link-icon"></i>
                 <i class="icon-trash link-icon"></i>
             </p>
@@ -172,6 +172,56 @@
               <a href="#" class="main-wrapper__links__content__btn"> + Add new </a>
             </div>
           </div>
+        </article>
+      </section>
+      <section class="main-wrapper second-wrapper" id="4">
+        <article class="main-wrapper__personal-data">
+          <div class="main-wrapper__personal-data__header article-header"> PERSONAL DATA </div>
+          <form class="form">
+            <div class="form__row">
+              <p class="form__row__name"> Name </p>
+              <p class="form__row__input"><input class="form-input" type="text" placeholder="Name"></p>
+            </div>
+            <div class="form__row">
+              <p class="form__row__name"> Surname </p>
+              <p class="form__row__input"><input class="form-input" type="text" placeholder="Surname"></p>
+            </div>
+            <div class="form__row">
+              <p class="form__row__name"> E-mail </p>
+              <p class="form__row__input"><input class="form-input" type="email" placeholder="E-mail"></p>
+            </div>
+            <div class="form__row">
+              <p class="form__row__name"> Phone Number </p>
+              <p class="form__row__input"><input class="form-input" type="number" placeholder="Phone number"></p>
+            </div>
+            <div class="form__row">
+              <p class="form__row__name"> Skype </p>
+              <p class="form__row__input"><input class="form-input" type="text" placeholder="Skype" value="Bartosz.H"></p>
+            </div>
+            <div class="form__row">
+              <p class="form__row__name"> MSN </p>
+              <p class="form__row__input"><input class="form-input" type="text"></p>
+            </div>
+            <div class="form__row">
+              <p class="form__row__name"> ICQ </p>
+              <p class="form__row__input"><input class="form-input" type="text"></p>
+            </div>
+            <div class="form__row">
+              <p class="form__row__name"> Wallet </p>
+              <p class="form__row__input"><input class="form-input" type="number"></p>
+            </div>
+            <div class="form__row">
+              <p class="form__row__name"> Password </p>
+              <p class="form__row__input"><input class="form-input" type="password"></p>
+            </div>
+            <div class="form__row">
+              <p class="form__row__name"> Repeat </p>
+              <p class="form__row__input"><input class="form-input" type="text"></p>
+            </div>
+            <div class="main-wrapper__links__content wrap">
+              <submit href="#" class="btn"> Send </submit>
+            </div>
+          </form>
         </article>
       </section>
     </div>
