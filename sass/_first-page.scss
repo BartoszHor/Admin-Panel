@@ -84,6 +84,13 @@
   font-size: 20px;
   cursor: pointer;
   z-index: 3;
+  background-color: $color-dark;
+  color: $color-light;
+  transition: $transition;
+  &:hover {
+    background-color: $color-light;
+    color: $color-dark;
+  }
 }
 .icon-close {
   color: white;
@@ -181,11 +188,14 @@
 }
 
 /* Main content */
-
+.main-wrapper.active {
+  display: block;
+}
 .main-wrapper {
+  display: none;
   margin-left: 240px;
   margin-top: 100px;
-  margin: 40px 10px 20px 225px;
+  margin: 50px 10px 20px 225px;
   background-color: white;
   &__post {
 
@@ -312,7 +322,7 @@
 }
 
 .second-wrapper {
-  margin-top: 20px;
+  margin-top: 50px;
   .main-wrapper__links__content {
     display: flex;
     justify-content: center;

@@ -595,6 +595,14 @@ template {
   font-size: 20px;
   cursor: pointer;
   z-index: 3;
+  background-color: #333;
+  color: #fff;
+  transition: all 0.5s;
+}
+
+.icon-arrow-right:hover {
+  background-color: #fff;
+  color: #333;
 }
 
 .icon-close {
@@ -705,10 +713,15 @@ template {
 }
 
 /* Main content */
+.main-wrapper.active {
+  display: block;
+}
+
 .main-wrapper {
+  display: none;
   margin-left: 240px;
   margin-top: 100px;
-  margin: 40px 10px 20px 225px;
+  margin: 50px 10px 20px 225px;
   background-color: white;
 }
 
@@ -867,7 +880,7 @@ template {
 }
 
 .second-wrapper {
-  margin-top: 20px;
+  margin-top: 50px;
 }
 
 .second-wrapper .main-wrapper__links__content {
