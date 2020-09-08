@@ -10,7 +10,7 @@ body {
   line-height: 1.7;
   font-weight: $font-normal;
   color: $color-dark;
-  height: 1200px;
+  max-height: 100vh;
 }
 
 .container {

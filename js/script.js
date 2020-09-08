@@ -20,27 +20,27 @@ for(let datePicker of datePickers){
 }
 
 function activatePage(pageId) {
-  let mainPages = document.querySelectorAll('.main-wrapper')
+  let mainPages = document.querySelectorAll('.main-wrapper');
   for (let page of mainPages) {
     if (page.id == pageId) {
-      page.classList.add('active')
+      page.classList.add('active');
     }
   }
 }
 
 function initPage() {
-  let pages = document.querySelectorAll('.main-wrapper')
-  const idFromHash = window.location.hash.replace('#', '')
-  let pageMatchingHash = 1
+  let pages = document.querySelectorAll('.main-wrapper');
+  const idFromHash = window.location.hash.replace('#', '');
+  let pageMatchingHash = pages[0].id;
   for (let page of pages) {
     if(page.id == idFromHash){
-      pageMatchingHash = page.id
+      pageMatchingHash = page.id;
       break;
     }
   }
-  activatePage(pageMatchingHash)
+  activatePage(pageMatchingHash);
 }
-initPage()
+initPage();
 
 
 /* Sidebar functions */
@@ -74,19 +74,19 @@ closeIcon.addEventListener('click', openCloseSidebar);
 
 
 function pickSection(event) {
-event.preventDefault();
-const clickedElement = this
-let mainSections = document.querySelectorAll('.main-wrapper')
-for (let section of mainSections) {
-    section.classList.toggle('active', section.id == clickedElement.id)
-    window.location.hash = clickedElement.id
+  event.preventDefault();
+  const clickedElement = this;
+  let mainSections = document.querySelectorAll('.main-wrapper');
+  for (let section of mainSections) {
+    section.classList.toggle('active', section.id == clickedElement.id);
+    window.location.hash = clickedElement.id;
   }
 }
 
 function sidebarListeners() {
-  let sidebarLinks = document.querySelectorAll('.sidebar__list__item a')
+  let sidebarLinks = document.querySelectorAll('.sidebar__list__item a');
   for (let link of sidebarLinks) {
-    link.addEventListener('click', pickSection)
+    link.addEventListener('click', pickSection);
   }
 }
-sidebarListeners()
+sidebarListeners();
