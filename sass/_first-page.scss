@@ -80,6 +80,7 @@
 /* Sidebar */
 .icon-arrow-right {
   position: sticky;
+  padding: 5px 2px 3px 2px;
   top: 50%;
   font-size: 20px;
   cursor: pointer;
@@ -455,11 +456,18 @@ form {
 }
 
 /* Payout */
-
-
-.payout-item {
-  display: flex;
-  justify-content: space-around;
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+th, td {
+  text-align: left;
+  padding: 8px;
+  min-width: 100px;
+}
+tr {
   border-bottom: $border-dark-style;
   transition: $transition;
   cursor: pointer;
@@ -467,37 +475,35 @@ form {
     background-color: rgba(0,0,0,0.2);
     color: $color-dark;
   }
-  p {
-    flex-grow: 1;
-    max-width: 100px;
-  }
-  .payout-first-row {
-    color: $font-color-dark;
-    transition: $transition;
-    cursor: pointer;
-    margin: 0;
-    padding: 10px 0;
-    border-radius: $radius;
-    text-align: center;
-    &:hover {
-      background-color: rgba(0,0,0,0.2);
-      color: black;
-    }
-  }
-  p:nth-child(1) {
-    padding-left: 10px;
-  }
-  .payout-item-casual {
-    text-align: center;
-  }
 }
-.main-wrapper__payout-history {
-  div:nth-child(3){
+tbody {
+  tr:nth-child(1) {
     &:hover {
       background-color: white;
     }
   }
+  tr:nth-child(odd) {
+    &:hover {
+      background-color: white;
+    }
+  }
+  tr th {
+    transition: $transition;
+    border-radius: $radius;
+    color: $font-color-dark;
+    text-align: center;
+    font-weight: 600;
+  }
+  tr td {
+    text-align: center;
+  }
+
+  tr th:hover {
+    background-color: rgba(0,0,0,0.2);
+    color: black;
+  }
 }
+
 .pseudo-slider {
   text-align: center;
   height: 60px;
@@ -520,6 +526,7 @@ form {
     transition: $transition;
     &:hover {
       background-color: rgba(0,0,0,0.2);
+      border-radius: 50%;
     }
   }
   .pseudo-slider-arrow-left {
@@ -687,54 +694,43 @@ form {
       }
     }
   }
-  .payout-item {
-    font-size: 10px;
-
-  }
-  .pseudo-slider {
-    height: 30px;
-    margin-top: 20px;
-    padding-bottom: 200px;
-  .pseudo-slider-list{
-    padding-left: 0;
+  tr, th {
+    font-size: 0.6rem;
   }
 
-  .pseudo-slider-list li {
-    font-size: 10px;
-    line-height: 15px;
-    width: 15px;
-    height: 15px;
+    .pseudo-slider {
+      height: 30px;
+      margin-top: 20px;
+      padding-bottom: 200px;
+      .pseudo-slider-list {
+        padding-left: 0;
+      }
+
+    .pseudo-slider-list li {
+      font-size: 10px;
+      line-height: 15px;
+      width: 15px;
+      height: 15px;
+      &:hover {
+        background-color: white;
+      }
+    }
+    .pseudo-slider-arrow-left {
+      font-size: 10px;
+      width: 15px;
+      height: 15px;
+      margin-right: 0;
+    }
+    .pseudo-slider-arrow-right {
+      font-size: 10px;
+      margin-left: 10px;
+      width: 15px;
+      height: 15px;
+    }
   }
-  .pseudo-slider-arrow-left {
-    font-size: 10px;
-    width: 15px;
-    height: 15px;
-    margin-right: 0;
-  }
-  .pseudo-slider-arrow-right {
-    font-size: 10px;
-    margin-left: 10px;
-    width: 15px;
-    height: 15px;
-  }
-}
 }
 
 @media(min-width: 577px) and (max-width: 755px) {
-  .smth {
-    flex-wrap: wrap;
-  .name {
-    flex-basis: 100%;
-    text-align: center;
-    padding-right: 0;
-    margin: 1% 0 1% 0;
-  }
-  .input {
-    flex-basis: 100%;
-    text-align: center;
-    margin: 1% 0 1% 0;
-  }
-}
   .icon-close {
     font-size: 17px;
     color: white;
@@ -846,6 +842,39 @@ form {
         text-align: center;
         margin: 0 0 1% 0;
       }
+    }
+  }
+  tr, th {
+    font-size: 0.6rem;
+  }
+   .pseudo-slider {
+      height: 30px;
+      margin-top: 20px;
+      padding-bottom: 200px;
+      .pseudo-slider-list {
+        padding-left: 0;
+      }
+
+    .pseudo-slider-list li {
+      font-size: 10px;
+      line-height: 15px;
+      width: 15px;
+      height: 15px;
+      &:hover {
+        background-color: white;
+      }
+    }
+    .pseudo-slider-arrow-left {
+      font-size: 10px;
+      width: 15px;
+      height: 15px;
+      margin-right: 0;
+    }
+    .pseudo-slider-arrow-right {
+      font-size: 10px;
+      margin-left: 10px;
+      width: 15px;
+      height: 15px;
     }
   }
 }

@@ -644,6 +644,7 @@ template {
 .icon-arrow-right {
   position: -webkit-sticky;
   position: sticky;
+  padding: 5px 2px 3px 2px;
   top: 50%;
   font-size: 20px;
   cursor: pointer;
@@ -1101,52 +1102,53 @@ form .form__row__input .form-input {
 }
 
 /* Payout */
-.payout-item {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+  min-width: 100px;
+}
+
+tr {
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   transition: all 0.5s;
   cursor: pointer;
 }
 
-.payout-item:hover {
+tr:hover {
   background-color: rgba(0, 0, 0, 0.2);
   color: #333;
 }
 
-.payout-item p {
-  -ms-flex-positive: 1;
-      flex-grow: 1;
-  max-width: 100px;
+tbody tr:nth-child(1):hover {
+  background-color: white;
 }
 
-.payout-item .payout-first-row {
-  color: gray;
+tbody tr:nth-child(odd):hover {
+  background-color: white;
+}
+
+tbody tr th {
   transition: all 0.5s;
-  cursor: pointer;
-  margin: 0;
-  padding: 10px 0;
   border-radius: 4px;
+  color: gray;
+  text-align: center;
+  font-weight: 600;
+}
+
+tbody tr td {
   text-align: center;
 }
 
-.payout-item .payout-first-row:hover {
+tbody tr th:hover {
   background-color: rgba(0, 0, 0, 0.2);
   color: black;
-}
-
-.payout-item p:nth-child(1) {
-  padding-left: 10px;
-}
-
-.payout-item .payout-item-casual {
-  text-align: center;
-}
-
-.main-wrapper__payout-history div:nth-child(3):hover {
-  background-color: white;
 }
 
 .pseudo-slider {
@@ -1175,6 +1177,7 @@ form .form__row__input .form-input {
 
 .pseudo-slider .pseudo-slider-list li:hover {
   background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
 }
 
 .pseudo-slider .pseudo-slider-arrow-left {
@@ -1326,8 +1329,8 @@ form .form__row__input .form-input {
     text-align: center;
     margin: 0 0 1% 0;
   }
-  .payout-item {
-    font-size: 10px;
+  tr, th {
+    font-size: 0.6rem;
   }
   .pseudo-slider {
     height: 30px;
@@ -1342,6 +1345,9 @@ form .form__row__input .form-input {
     line-height: 15px;
     width: 15px;
     height: 15px;
+  }
+  .pseudo-slider .pseudo-slider-list li:hover {
+    background-color: white;
   }
   .pseudo-slider .pseudo-slider-arrow-left {
     font-size: 10px;
@@ -1358,23 +1364,6 @@ form .form__row__input .form-input {
 }
 
 @media (min-width: 577px) and (max-width: 755px) {
-  .smth {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-  }
-  .smth .name {
-    -ms-flex-preferred-size: 100%;
-        flex-basis: 100%;
-    text-align: center;
-    padding-right: 0;
-    margin: 1% 0 1% 0;
-  }
-  .smth .input {
-    -ms-flex-preferred-size: 100%;
-        flex-basis: 100%;
-    text-align: center;
-    margin: 1% 0 1% 0;
-  }
   .icon-close {
     font-size: 17px;
     color: white;
@@ -1477,6 +1466,38 @@ form .form__row__input .form-input {
         flex-basis: 100%;
     text-align: center;
     margin: 0 0 1% 0;
+  }
+  tr, th {
+    font-size: 0.6rem;
+  }
+  .pseudo-slider {
+    height: 30px;
+    margin-top: 20px;
+    padding-bottom: 200px;
+  }
+  .pseudo-slider .pseudo-slider-list {
+    padding-left: 0;
+  }
+  .pseudo-slider .pseudo-slider-list li {
+    font-size: 10px;
+    line-height: 15px;
+    width: 15px;
+    height: 15px;
+  }
+  .pseudo-slider .pseudo-slider-list li:hover {
+    background-color: white;
+  }
+  .pseudo-slider .pseudo-slider-arrow-left {
+    font-size: 10px;
+    width: 15px;
+    height: 15px;
+    margin-right: 0;
+  }
+  .pseudo-slider .pseudo-slider-arrow-right {
+    font-size: 10px;
+    margin-left: 10px;
+    width: 15px;
+    height: 15px;
   }
 }
 
