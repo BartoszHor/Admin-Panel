@@ -586,6 +586,7 @@ form {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  margin-top: 30px;
   &__select {
     .postback-type {
       padding-left: 0;
@@ -600,7 +601,8 @@ form {
 }
 .checkbox-range__wrapper {
   display: flex;
-  margin: 30px 0 30px 0;
+  flex-wrap: wrap;
+  margin: 50px 0 30px 0;
   &__checkbox {
     flex-basis: 49%;
     border: $border-dark-style;
@@ -610,17 +612,166 @@ form {
       font-weight: $font-bold;
       padding-left: 10px;
     }
+    fieldset {
+      border: none;
+      overflow-y: scroll;
+      height: 120px;
+      margin-bottom: 20px;
+      & > div {
+        padding: 0;
+        border: none;
+        padding: 3px 0 3px 0;
+        span {
+          padding-left: 10px;
+        }
+      }
+    }
   }
   &__range {
     flex-basis: 49%;
     border: $border-dark-style;
+    .range {
+      padding-left: 10px;
+    }
   }
+}
+.submit-button {
+  text-align: right;
+  margin-right: 3%;
+  padding-bottom: 0;
+  .btn {
+    padding: 10px 25px 10px 25px;
+  }
+}
+.checkbox-range__wrapper__range {
+  text-align: center;
+  input {
+    transform: translateY(50px);
+  }
+}
+
+input[type=range] {
+  -webkit-appearance: none;
+  width: 80%;
+  background: transparent;
+
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+input[type=range]:focus {
+  outline: none;
+}
+
+input[type=range]::-ms-track {
+  width: 80%;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 20px solid orange;
+  background: #ffffff;
+  cursor: pointer;
+  margin-top: -14px;
+  transform: translateY(22px);
+}
+
+
+input[type=range]::-moz-range-thumb {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 20px solid orange;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+input[type=range]::-ms-thumb {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 20px solid orange;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  width: 80%;
+  height: 8.4px;
+  cursor: pointer;
+  background: orange;
+  border-radius: 1.3px;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: orange;
+}
+
+input[type=range]::-moz-range-track {
+  width: 80%;
+  height: 8.4px;
+  cursor: pointer;
+  background: orange;
+  border-radius: 1.3px;
+}
+
+input[type=range]::-ms-track {
+  width: 80%;
+  height: 8.4px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  border-width: 16px 0;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  background: #2a6495;
+  border-radius: 2.6px;
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: #3071a9;
+}
+input[type=range]::-ms-fill-upper {
+  background: orange;
+  border-radius: 2.6px;
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: #367ebd;
 }
 
 
 
 /* Media queries */
 @media(min-width: 300px)and(max-width: 380px) {
+  .checkbox-range__wrapper__range {
+    height: 150px;
+  }
+  .input[type=range] {
+    transform: translateY(43px);
+  }
+  .checkbox-range__wrapper__range input {
+    transform: translateY(23px);
+  }
+  .submit-button {
+    margin-bottom: 50px;
+  }
+  submit .btn {
+    display: block;
+    width: 120px;
+    margin-top: 60px;
+  }
   .header {
     &__wrapper {
       transform: translateX(-40px);
@@ -632,6 +783,27 @@ form {
     transform: translate(32px, 1px);
     display: inline-block;
     cursor: pointer;
+  }
+  .checkbox-range__wrapper {
+    justify-content: center;
+    &__checkbox {
+      flex-basis: 80%;
+      border: $border-dark-style;
+      margin-bottom: 30px;
+    }
+    &__range {
+      flex-basis: 80%;
+      border: $border-dark-style;
+      .range {
+        padding-left: 10px;
+      }
+    }
+  }
+  .submit-button {
+    margin-right: 10%;
+  }
+  .placeholders {
+    width: 51%;
   }
 }
 @media(max-width: 576px){
@@ -800,9 +972,50 @@ form {
       height: 15px;
     }
   }
+  .checkbox-range__wrapper {
+    justify-content: center;
+    &__checkbox {
+      flex-basis: 100%;
+      border: $border-dark-style;
+      margin-bottom: 30px;
+    }
+    &__range {
+      flex-basis: 100%;
+      border: $border-dark-style;
+      .range {
+        padding-left: 10px;
+      }
+    }
+  }
+  .submit-button {
+    margin-right: 10%;
+  }
+  .placeholders {
+    width: 51%;
+  }
+  .checkbox-range__wrapper__range {
+    height: 150px;
+  }
+  .input[type=range] {
+    transform: translateY(43px);
+  }
+  .checkbox-range__wrapper__range input {
+    transform: translateY(23px);
+  }
+  .submit-button {
+    margin-bottom: 50px;
+  }
+  submit .btn {
+    display: block;
+    width: 120px;
+    margin-top: 60px;
+  }
 }
 
 @media(min-width: 577px) and (max-width: 755px) {
+  .placeholders {
+    width: 51%;
+  }
   .icon-close {
     font-size: 17px;
     color: white;
@@ -949,12 +1162,83 @@ form {
       height: 15px;
     }
   }
+
+  .checkbox-range__wrapper {
+    justify-content: center;
+    &__checkbox {
+      flex-basis: 100%;
+      border: $border-dark-style;
+      margin-bottom: 30px;
+    }
+    &__range {
+      flex-basis: 100%;
+      border: $border-dark-style;
+      .range {
+        padding-left: 10px;
+      }
+    }
+  }
+  .submit-button {
+    margin-right: 10%;
+  }
+  .checkbox-range__wrapper__range {
+    height: 150px;
+  }
+  .input[type=range] {
+    transform: translateY(43px);
+  }
+  .checkbox-range__wrapper__range input {
+    transform: translateY(23px);
+  }
+  .submit-button {
+    margin-bottom: 50px;
+  }
+  submit .btn {
+    display: block;
+    width: 120px;
+    margin-top: 60px;
+  }
 }
 @media(min-width: 577px) and (max-width: 755px) {
   .sidebar {
     min-width: 100px;
     display: block;
     z-index: 4;
+  }
+  .checkbox-range__wrapper {
+    justify-content: center;
+    &__checkbox {
+      flex-basis: 80%;
+      border: $border-dark-style;
+      margin-bottom: 30px;
+    }
+    &__range {
+      flex-basis: 80%;
+      border: $border-dark-style;
+      .range {
+        padding-left: 10px;
+      }
+    }
+  }
+  .submit-button {
+    margin-right: 10%;
+  }
+  .checkbox-range__wrapper__range {
+    height: 150px;
+  }
+  .input[type=range] {
+    transform: translateY(43px);
+  }
+  .checkbox-range__wrapper__range input {
+    transform: translateY(23px);
+  }
+  .submit-button {
+    margin-bottom: 50px;
+  }
+  submit .btn {
+    display: block;
+    width: 120px;
+    margin-top: 60px;
   }
 }
 

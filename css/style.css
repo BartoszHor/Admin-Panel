@@ -20,6 +20,31 @@
   font-weight: 600;
 }
 
+.btn {
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-preferred-size: 130px;
+      flex-basis: 130px;
+  text-align: center;
+  margin: 40px auto 60px auto;
+  padding: 10px;
+  border-radius: 4px;
+  text-decoration: none;
+  cursor: pointer;
+  border: 2px solid;
+  background-position: 0% 100%;
+  background-size: 250%;
+  transition: all 0.5s;
+  border-color: orange;
+  color: white;
+  background-image: linear-gradient(45deg, orange 50%, transparent 50%);
+}
+
+.btn:hover {
+  color: orange;
+  background-position: 100% 0%;
+}
+
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -1196,6 +1221,7 @@ form {
       justify-content: space-around;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  margin-top: 30px;
 }
 
 .select-wrapper__select .postback-type {
@@ -1212,7 +1238,9 @@ form {
 .checkbox-range__wrapper {
   display: -ms-flexbox;
   display: flex;
-  margin: 30px 0 30px 0;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 50px 0 30px 0;
 }
 
 .checkbox-range__wrapper__checkbox {
@@ -1228,14 +1256,173 @@ form {
   padding-left: 10px;
 }
 
+.checkbox-range__wrapper__checkbox fieldset {
+  border: none;
+  overflow-y: scroll;
+  height: 120px;
+  margin-bottom: 20px;
+}
+
+.checkbox-range__wrapper__checkbox fieldset > div {
+  padding: 0;
+  border: none;
+  padding: 3px 0 3px 0;
+}
+
+.checkbox-range__wrapper__checkbox fieldset > div span {
+  padding-left: 10px;
+}
+
 .checkbox-range__wrapper__range {
   -ms-flex-preferred-size: 49%;
       flex-basis: 49%;
   border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
+.checkbox-range__wrapper__range .range {
+  padding-left: 10px;
+}
+
+.submit-button {
+  text-align: right;
+  margin-right: 3%;
+  padding-bottom: 0;
+}
+
+.submit-button .btn {
+  padding: 10px 25px 10px 25px;
+}
+
+.checkbox-range__wrapper__range {
+  text-align: center;
+}
+
+.checkbox-range__wrapper__range input {
+  transform: translateY(50px);
+}
+
+input[type=range] {
+  -webkit-appearance: none;
+  width: 80%;
+  background: transparent;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+input[type=range]:focus {
+  outline: none;
+}
+
+input[type=range]::-ms-track {
+  width: 80%;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 20px solid orange;
+  background: #ffffff;
+  cursor: pointer;
+  margin-top: -14px;
+  transform: translateY(22px);
+}
+
+input[type=range]::-moz-range-thumb {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 20px solid orange;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+input[type=range]::-ms-thumb {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 20px solid orange;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  width: 80%;
+  height: 8.4px;
+  cursor: pointer;
+  background: orange;
+  border-radius: 1.3px;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: orange;
+}
+
+input[type=range]::-moz-range-track {
+  width: 80%;
+  height: 8.4px;
+  cursor: pointer;
+  background: orange;
+  border-radius: 1.3px;
+}
+
+input[type=range]::-ms-track {
+  width: 80%;
+  height: 8.4px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  border-width: 16px 0;
+  color: transparent;
+}
+
+input[type=range]::-ms-fill-lower {
+  background: #2a6495;
+  border-radius: 2.6px;
+}
+
+input[type=range]:focus::-ms-fill-lower {
+  background: #3071a9;
+}
+
+input[type=range]::-ms-fill-upper {
+  background: orange;
+  border-radius: 2.6px;
+}
+
+input[type=range]:focus::-ms-fill-upper {
+  background: #367ebd;
+}
+
 /* Media queries */
 @media (min-width: 300px) and (max-width: 380px) {
+  .checkbox-range__wrapper__range {
+    height: 150px;
+  }
+  .input[type=range] {
+    transform: translateY(43px);
+  }
+  .checkbox-range__wrapper__range input {
+    transform: translateY(23px);
+  }
+  .submit-button {
+    margin-bottom: 50px;
+  }
+  submit .btn {
+    display: block;
+    width: 120px;
+    margin-top: 60px;
+  }
   .header__wrapper {
     transform: translateX(-40px);
   }
@@ -1245,6 +1432,30 @@ form {
     transform: translate(32px, 1px);
     display: inline-block;
     cursor: pointer;
+  }
+  .checkbox-range__wrapper {
+    -ms-flex-pack: center;
+        justify-content: center;
+  }
+  .checkbox-range__wrapper__checkbox {
+    -ms-flex-preferred-size: 80%;
+        flex-basis: 80%;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+  }
+  .checkbox-range__wrapper__range {
+    -ms-flex-preferred-size: 80%;
+        flex-basis: 80%;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+  }
+  .checkbox-range__wrapper__range .range {
+    padding-left: 10px;
+  }
+  .submit-button {
+    margin-right: 10%;
+  }
+  .placeholders {
+    width: 51%;
   }
 }
 
@@ -1398,9 +1609,53 @@ form {
     width: 15px;
     height: 15px;
   }
+  .checkbox-range__wrapper {
+    -ms-flex-pack: center;
+        justify-content: center;
+  }
+  .checkbox-range__wrapper__checkbox {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+  }
+  .checkbox-range__wrapper__range {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+  }
+  .checkbox-range__wrapper__range .range {
+    padding-left: 10px;
+  }
+  .submit-button {
+    margin-right: 10%;
+  }
+  .placeholders {
+    width: 51%;
+  }
+  .checkbox-range__wrapper__range {
+    height: 150px;
+  }
+  .input[type=range] {
+    transform: translateY(43px);
+  }
+  .checkbox-range__wrapper__range input {
+    transform: translateY(23px);
+  }
+  .submit-button {
+    margin-bottom: 50px;
+  }
+  submit .btn {
+    display: block;
+    width: 120px;
+    margin-top: 60px;
+  }
 }
 
 @media (min-width: 577px) and (max-width: 755px) {
+  .placeholders {
+    width: 51%;
+  }
   .icon-close {
     font-size: 17px;
     color: white;
@@ -1536,6 +1791,44 @@ form {
     width: 15px;
     height: 15px;
   }
+  .checkbox-range__wrapper {
+    -ms-flex-pack: center;
+        justify-content: center;
+  }
+  .checkbox-range__wrapper__checkbox {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+  }
+  .checkbox-range__wrapper__range {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+  }
+  .checkbox-range__wrapper__range .range {
+    padding-left: 10px;
+  }
+  .submit-button {
+    margin-right: 10%;
+  }
+  .checkbox-range__wrapper__range {
+    height: 150px;
+  }
+  .input[type=range] {
+    transform: translateY(43px);
+  }
+  .checkbox-range__wrapper__range input {
+    transform: translateY(23px);
+  }
+  .submit-button {
+    margin-bottom: 50px;
+  }
+  submit .btn {
+    display: block;
+    width: 120px;
+    margin-top: 60px;
+  }
 }
 
 @media (min-width: 577px) and (max-width: 755px) {
@@ -1543,6 +1836,44 @@ form {
     min-width: 100px;
     display: block;
     z-index: 4;
+  }
+  .checkbox-range__wrapper {
+    -ms-flex-pack: center;
+        justify-content: center;
+  }
+  .checkbox-range__wrapper__checkbox {
+    -ms-flex-preferred-size: 80%;
+        flex-basis: 80%;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+  }
+  .checkbox-range__wrapper__range {
+    -ms-flex-preferred-size: 80%;
+        flex-basis: 80%;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+  }
+  .checkbox-range__wrapper__range .range {
+    padding-left: 10px;
+  }
+  .submit-button {
+    margin-right: 10%;
+  }
+  .checkbox-range__wrapper__range {
+    height: 150px;
+  }
+  .input[type=range] {
+    transform: translateY(43px);
+  }
+  .checkbox-range__wrapper__range input {
+    transform: translateY(23px);
+  }
+  .submit-button {
+    margin-bottom: 50px;
+  }
+  submit .btn {
+    display: block;
+    width: 120px;
+    margin-top: 60px;
   }
 }
 
