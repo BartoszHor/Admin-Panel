@@ -175,8 +175,8 @@
         </article>
       </section>
       <section class="main-wrapper second-wrapper" id="4">
-        <article class="main-wrapper__personal-data">
-          <div class="main-wrapper__personal-data__header article-header"> PERSONAL DATA </div>
+        <article>
+          <div class="article-header"> PERSONAL DATA </div>
           <form class="form">
             <div class="form__row">
               <p class="form__row__name"> Name </p>
@@ -225,8 +225,8 @@
         </article>
       </section>
        <section class="main-wrapper" id="5">
-        <article class="main-wrapper__payout-history">
-          <div class="main-wrapper__payout-history__header article-header"> PAYOUT HISTORY</div>
+        <article>
+          <div class="article-header"> PAYOUT HISTORY</div>
           <div class="main-wrapper__post__datePicker">
             <input type="text" class="datePicker">
             <input type="text" class="datePicker">
@@ -315,8 +315,8 @@
         </article>
       </section>
       <section class="main-wrapper" id="6">
-        <article class="main-wrapper__payout-history">
-          <div class="main-wrapper__payout-history__header article-header"> Details </div>
+        <article>
+          <div class="article-header"> DETAILS </div>
           <div class="main-wrapper__post__datePicker">
             <input type="text" class="datePicker">
             <input type="text" class="datePicker">
@@ -498,6 +498,68 @@
               <i class="icon-arrow-right pseudo-slider-arrow-right"></i>
             </ul>
           </div>
+        </article>
+      </section>
+      <section class="main-wrapper" id="7">
+        <article>
+          <div class="article-header"> NEW POSTBACK </div>
+          <p class="p1"> You can insert some parameters in this postback </p>
+          <form>
+            <div class="postback-wrapper">
+              <div class="placeholders">
+                <p class="normalized-p"> Signup </p>
+                <textarea placeholder="Your details"> Your details </textarea>
+              </div>
+              <div class="placeholders">
+                <p class="normalized-p"> Deposit </p>
+                <textarea placeholder="Your deposit details"> Your deposit details </textarea>
+              </div>
+            </div>
+            <div class="select-wrapper">
+              <div class="select-wrapper__select">
+                <p class="normalized-p postback-type"> Postback type </p>
+                <select name="postback" id="postback-type">
+                  <option value="none" selected disabled hidden> B2B(http://...) </option>
+                  <option value="http://postback-random.com"> http://postback-random.com </option>
+                  <option value="http://postback-random2.com"> http://postback-random2.com </option>
+                  <option value="http://postback-random3.com"> http://postback-random3.com</option>
+                </select>
+              </div>
+              <div class="select-wrapper__select">
+                <p class="normalized-p postback-type"> To countries </p>
+                <select name="postback" id="postback-type">
+                  <option value="none" selected disabled hidden> Select countries </option>
+                  <optgroup label="Schengen">
+                    <option value="http://postback-random.com"> Poland </option>
+                    <option value="http://postback-random2.com"> Germany </option>
+                    <option value="http://postback-random3.com"> Belgium </option>
+                  </optgroup>
+                  <optgroup label="Non-Schengen">
+                    <option value="http://postback-random.com"> Marocco </option>
+                    <option value="http://postback-random2.com"> Thailand </option>
+                    <option value="http://postback-random3.com"> Vietnam </option>
+                  </optgroup>
+                </select>
+              </div>
+              <div class="select-wrapper__select">
+                <p class="normalized-p postback-type"> To countries </p>
+                <select name="postback" id="postback-type">
+                  <option value="none" selected disabled hidden> Select </option>
+                  <option value="http://postback-random.com"> http://postback-random.com </option>
+                  <option value="http://postback-random2.com"> http://postback-random2.com </option>
+                  <option value="http://postback-random3.com"> http://postback-random3.com</option>
+                </select>
+              </div>
+            </div>
+            <div class="checkbox-range__wrapper">
+              <div class="checkbox-range__wrapper__checkbox">
+                <p class="normalized-p postback-type"><span class="not">NOT </span>send statuses </p>
+              </div>
+              <div class="checkbox-range__wrapper__range">
+                <p class="normalized-p postback-type"> Send after: </p>
+              </div>
+            </div>
+          </form>
         </article>
       </section>
     </div>

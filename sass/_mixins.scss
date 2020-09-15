@@ -16,48 +16,10 @@
   font-weight: $font-bold;
 }
 
-/* Datepicker */
-.datepicker {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100px;
-      border-bottom: $border-dark-style;
-      .icon-calendar {
-        vertical-align: middle;
-        line-height: 40px;
-        border: $border-dark-style;
-        border-left: none;
-        cursor: pointer;
-      }
-      .refresh {
-        color: $color-light;
-        padding: 10px 15px;
-        margin-left: 10px;
-        background-color: orange;
-        border-radius: $radius;
-        transition: $transition;
-        cursor: pointer;
-        &:hover {
-          background-color: $color-light;
-          color: orange;
-        }
-      }
-    }
-    input {
-        border: $border-dark-style;
-        position: relative;
-        text-align: center;
-        padding: 12px 5px;
-        overflow: hidden;
-        z-index: 0;
-        &:nth-child(2){
-          border-left: none;
-          border-right: none;
-        }
-        &:focus {
-          outline-width: 0;
-        }
-      }
+.normalized-p {
+    text-align: left;
+    color: $font-color;
+    font-weight: 600;
+  }
 
 

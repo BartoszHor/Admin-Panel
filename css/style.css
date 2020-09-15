@@ -14,57 +14,10 @@
   font-weight: 700;
 }
 
-/* Datepicker */
-.datepicker {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: center;
-      justify-content: center;
-  -ms-flex-align: center;
-      align-items: center;
-  height: 100px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-}
-
-.datepicker .icon-calendar {
-  vertical-align: middle;
-  line-height: 40px;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  border-left: none;
-  cursor: pointer;
-}
-
-.datepicker .refresh {
-  color: #fff;
-  padding: 10px 15px;
-  margin-left: 10px;
-  background-color: orange;
-  border-radius: 4px;
-  transition: all 0.5s;
-  cursor: pointer;
-}
-
-.datepicker .refresh:hover {
-  background-color: #fff;
-  color: orange;
-}
-
-input {
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  position: relative;
-  text-align: center;
-  padding: 12px 5px;
-  overflow: hidden;
-  z-index: 0;
-}
-
-input:nth-child(2) {
-  border-left: none;
-  border-right: none;
-}
-
-input:focus {
-  outline-width: 0;
+.normalized-p {
+  text-align: left;
+  color: #cccccc;
+  font-weight: 600;
 }
 
 *, *::before, *::after {
@@ -1101,7 +1054,7 @@ form .form__row__input .form-input {
   border-color: white;
 }
 
-/* Payout */
+/* Payout and Details */
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -1113,6 +1066,7 @@ th, td {
   text-align: left;
   padding: 8px;
   min-width: 100px;
+  height: 50px;
 }
 
 tr {
@@ -1195,6 +1149,89 @@ tbody tr th:hover {
   margin-left: 20px;
   width: 30px;
   height: 30px;
+}
+
+/* Postback section */
+form {
+  padding: 0;
+}
+
+.postback-wrapper {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.placeholders {
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+  text-align: center;
+}
+
+.placeholders .normalized-p {
+  text-align: left;
+  color: #cccccc;
+  font-weight: 600;
+  padding-left: 8px;
+}
+
+.placeholders textarea {
+  min-height: 150px;
+  width: 97%;
+  border-color: #b3b3b3;
+  color: #b3b3b3;
+}
+
+.placeholders textarea:focus {
+  outline-width: 0;
+}
+
+.select-wrapper {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.select-wrapper__select .postback-type {
+  padding-left: 0;
+}
+
+.select-wrapper__select select {
+  height: 30px;
+  padding: 5px;
+  margin-top: 5px;
+  min-width: 220px;
+}
+
+.checkbox-range__wrapper {
+  display: -ms-flexbox;
+  display: flex;
+  margin: 30px 0 30px 0;
+}
+
+.checkbox-range__wrapper__checkbox {
+  -ms-flex-preferred-size: 49%;
+      flex-basis: 49%;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-right: none;
+}
+
+.checkbox-range__wrapper__checkbox .not {
+  color: red;
+  font-weight: 700;
+  padding-left: 10px;
+}
+
+.checkbox-range__wrapper__range {
+  -ms-flex-preferred-size: 49%;
+      flex-basis: 49%;
+  border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 /* Media queries */
