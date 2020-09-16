@@ -1,6 +1,9 @@
 /* Header */
 
 .header {
+  i {
+    cursor: pointer;
+  }
   position: fixed;
   top: 0;
   left: 0;
@@ -33,11 +36,17 @@
     &__arrow-down {
       align-self: center;
       border-right: $header-border-style;
+      cursor: pointer;
     }
 
     &__icon-notification {
       border-right: $header-border-style;
       position: relative;
+      transition: $transition;
+      cursor: pointer;
+      &:hover {
+        background-color: #F5F5F2;
+      }
       &::after {
         content: '';
         width: 7px;
@@ -529,9 +538,11 @@ tbody {
     width: 30px;
     height: 30px;
     transition: $transition;
+    cursor: pointer;
     &:hover {
       background-color: rgba(0,0,0,0.2);
       border-radius: 50%;
+      color: orange;
     }
   }
   .pseudo-slider-arrow-left {
@@ -754,6 +765,7 @@ input[type=range]:focus::-ms-fill-upper {
 
 
 /* Media queries */
+
 @media(min-width: 300px)and(max-width: 380px) {
   .checkbox-range__wrapper__range {
     height: 150px;

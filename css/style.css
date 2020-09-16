@@ -64,6 +64,10 @@ body {
   margin: 0 auto;
 }
 
+i, input {
+  cursor: pointer;
+}
+
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -545,6 +549,10 @@ template {
   min-width: 500px;
 }
 
+.header i {
+  cursor: pointer;
+}
+
 .header__wrapper {
   display: -ms-flexbox;
   display: flex;
@@ -576,11 +584,18 @@ template {
       -ms-grid-row-align: center;
       align-self: center;
   border-right: 1px solid rgba(0, 0, 0, 0.2);
+  cursor: pointer;
 }
 
 .header__wrapper__icon-notification {
   border-right: 1px solid rgba(0, 0, 0, 0.2);
   position: relative;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.header__wrapper__icon-notification:hover {
+  background-color: #F5F5F2;
 }
 
 .header__wrapper__icon-notification::after {
@@ -1152,11 +1167,13 @@ tbody tr th:hover {
   width: 30px;
   height: 30px;
   transition: all 0.5s;
+  cursor: pointer;
 }
 
 .pseudo-slider .pseudo-slider-list li:hover {
   background-color: rgba(0, 0, 0, 0.2);
   border-radius: 50%;
+  color: orange;
 }
 
 .pseudo-slider .pseudo-slider-arrow-left {
