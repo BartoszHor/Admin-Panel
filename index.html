@@ -9,7 +9,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
 
-  <body onresize = "showSidebar()">
+  <body onresize="showSidebar()">
+    <section class="modal-section">
+      <div class="overlay" id="overlay">
+        <div class="modal" id="myModal">
+          <p class="modal-p normalized-p">ONLINE CHAT WITH YOUR PERSONAL MANAGER</p>
+          <div class="btn-close js--close-modal"> X </div>
+          <div class="sidebar__manager__wrapper modal-manager" id="1">
+            <img src="https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?cs=srgb&dl=pexels-italo-melo-2379005.jpg&fm=jpg" class="sidebar__photo" width="50" height="50">
+            <p class="manager p1"> Pawel</p>
+          </div>
+          <p class="chat-1"> Hello. Can I help You somehow? </p><br>
+          <p class="chat-2"> Ye. Tell me more about Your offer. </p> <br>
+          <p class="chat-3"> Ok. Give me sec. </p><br>
+          <div class="send-msg">
+            <input type="search" class="search-input" placeholder="       Enter Your msg" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your text'">
+            <i class="icon-message"></i>
+            <button class="btn btn-send-msg"> Send </button>
+
+          </div>
+        </div>
+      </div>
+    </section>
     <div class="container">
       <i class="icon-arrow-right"></i>
       <section class="header">
@@ -38,7 +59,7 @@
           <li class="sidebar__list__item"><a href="#postback" id="7"> <i class="icon-postback header__wrapper__icon-quit p2"></i> Postback </a> </li>
         </ul>
         <p class="sidebar__manager">YOUR MANAGER</p>
-        <div class="sidebar__manager__wrapper">
+        <div class="sidebar__manager__wrapper sidebar-manager">
           <img src="https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?cs=srgb&dl=pexels-italo-melo-2379005.jpg&fm=jpg" class="sidebar__photo" width="50" height="50">
           <p class="manager p1"> Pawel</p>
         </div>
@@ -61,10 +82,7 @@
             <p class="main-wrapper__post__chart__header">Earnings chart</p>
           </div>
           <div class="main-wrapper__post__chart">
-            <p class="main-wrapper__post__chart__legend"> Signups </p>
-            <p class="main-wrapper__post__chart__legend"> FTD </p>
-            <p class="main-wrapper__post__chart__legend"> Earned </p>
-            <img src="images/chart.jpg" title="demo chart">
+            <canvas id="myChart"></canvas>
           </div>
         </article>
       </section>
@@ -177,49 +195,49 @@
       <section class="main-wrapper second-wrapper" id="4">
         <article>
           <div class="article-header"> PERSONAL DATA </div>
-          <form class="form">
+          <form class="form" action="" method="POST">
             <div class="form__row">
               <p class="form__row__name"> Name </p>
-              <p class="form__row__input"><input class="form-input" type="text" placeholder="Name"></p>
+              <p class="form__row__input"><input class="form-input" type="text" placeholder="Name" name="name"></p>
             </div>
             <div class="form__row">
               <p class="form__row__name"> Surname </p>
-              <p class="form__row__input"><input class="form-input" type="text" placeholder="Surname"></p>
+              <p class="form__row__input"><input class="form-input" type="text" placeholder="Surname" name="surname"></p>
             </div>
             <div class="form__row">
               <p class="form__row__name"> E-mail </p>
-              <p class="form__row__input"><input class="form-input" type="email" placeholder="E-mail"></p>
+              <p class="form__row__input"><input class="form-input" type="email" required placeholder="E-mail" name="email"></p>
             </div>
             <div class="form__row">
               <p class="form__row__name"> Phone Number </p>
-              <p class="form__row__input"><input class="form-input" type="number" placeholder="Phone number"></p>
+              <p class="form__row__input"><input class="form-input" minlength="9" type="number" placeholder="Phone number" name="phone-number"></p>
             </div>
             <div class="form__row">
               <p class="form__row__name"> Skype </p>
-              <p class="form__row__input"><input class="form-input" type="text" placeholder="Skype" value="Bartosz.H"></p>
+              <p class="form__row__input"><input class="form-input" type="text" placeholder="Skype" value="Bartosz.H" name="skype"></p>
             </div>
             <div class="form__row">
               <p class="form__row__name"> MSN </p>
-              <p class="form__row__input"><input class="form-input" type="text"></p>
+              <p class="form__row__input"><input class="form-input" type="text" name="msn"></p>
             </div>
             <div class="form__row">
               <p class="form__row__name"> ICQ </p>
-              <p class="form__row__input"><input class="form-input" type="text"></p>
+              <p class="form__row__input"><input class="form-input" type="text" name="icq"></p>
             </div>
             <div class="form__row">
               <p class="form__row__name"> Wallet </p>
-              <p class="form__row__input"><input class="form-input" type="number"></p>
+              <p class="form__row__input"><input class="form-input" type="number" name="wallet"></p>
             </div>
             <div class="form__row">
               <p class="form__row__name"> Password </p>
-              <p class="form__row__input"><input class="form-input" type="password"></p>
+              <p class="form__row__input"><input class="form-input" type="password" name="password"></p>
             </div>
             <div class="form__row">
               <p class="form__row__name"> Repeat </p>
-              <p class="form__row__input"><input class="form-input" type="password"></p>
+              <p class="form__row__input"><input class="form-input" type="password" name="repeat"></p>
             </div>
             <div class="main-wrapper__links__content wrap">
-              <submit href="#" class="btn"> Send </submit>
+              <submit type="submit" class="btn"> Send </submit>
             </div>
           </form>
         </article>
@@ -504,15 +522,15 @@
         <article>
           <div class="article-header"> NEW POSTBACK </div>
           <p class="p1"> You can insert some parameters in this postback </p>
-          <form>
+          <form action="" method="POST">
             <div class="postback-wrapper">
               <div class="placeholders">
                 <p class="normalized-p"> Signup </p>
-                <textarea placeholder="Your details"> Your details </textarea>
+                <textarea placeholder="Your details" name="detils"> Your details </textarea>
               </div>
               <div class="placeholders">
                 <p class="normalized-p"> Deposit </p>
-                <textarea placeholder="Your deposit details"> Your deposit details </textarea>
+                <textarea placeholder="Your deposit details" name="depo-detils"> Your deposit details </textarea>
               </div>
             </div>
             <div class="select-wrapper">
@@ -556,67 +574,67 @@
                 <p class="normalized-p postback-type"><span class="not">NOT </span>send statuses </p>
                 <fieldset>
                   <div class="checkbox-item">
-                    <input type="checkbox" name="checkNumber" value="checkNumber">
+                    <input type="checkbox" name="checkbox-item" value="checkNumber">
                     <span class="checkbox-span">checkNumber</span>
                   </div>
                   <div class="checkbox-item">
-                    <input type="checkbox" name="noAnswear" value="noAnswear">
+                    <input type="checkbox" name="checkbox-item" value="noAnswear">
                     <span class="checkbox-span">noAnswear</span>
                   </div>
                   <div class="checkbox-item">
-                    <input type="checkbox" name="noCall" value="noCall">
+                    <input type="checkbox" name="checkbox-item" value="noCall">
                     <span class="checkbox-span">noCall</span>
                   </div>
                   <div class="checkbox-item">
-                    <input type="checkbox" name="callAgain" value="callAgain">
+                    <input type="checkbox" name="checkbox-item" value="callAgain">
                     <span class="checkbox-span">callAgain</span>
                   </div>
                   <div class="checkbox-item">
-                    <input type="checkbox" name="checkNumber" value="checkNumber">
+                    <input type="checkbox" name="checkbox-item" value="checkNumber">
                     <span class="checkbox-span">checkNumber</span>
                   </div>
                   <div class="checkbox-item">
-                    <input type="checkbox" name="noAnswear" value="noAnswear">
+                    <input type="checkbox" name="checkbox-item" value="noAnswear">
                     <span class="checkbox-span">noAnswear</span>
                   </div>
                   <div class="checkbox-item">
-                    <input type="checkbox" name="noCall" value="noCall">
+                    <input type="checkbox" name="checkbox-item" value="noCall">
                     <span class="checkbox-span">noCall</span>
                   </div>
                   <div class="checkbox-item">
-                    <input type="checkbox" name="callAgain" value="callAgain">
+                    <input type="checkbox" name="checkbox-item" value="callAgain">
                     <span class="checkbox-span">callAgain</span>
                   </div>
                   <div class="checkbox-item">
-                    <input type="checkbox" name="checkNumber" value="checkNumber">
+                    <input type="checkbox" name="checkbox-item" value="checkNumber">
                     <span class="checkbox-span">checkNumber</span>
                   </div>
                   <div class="checkbox-item">
-                    <input type="checkbox" name="noAnswear" value="noAnswear">
+                    <input type="checkbox" name="checkbox-item" value="noAnswear">
                     <span class="checkbox-span">noAnswear</span>
                   </div>
                   <div class="checkbox-item">
-                    <input type="checkbox" name="noCall" value="noCall">
+                    <input type="checkbox" name="checkbox-item" value="noCall">
                     <span class="checkbox-span">noCall</span>
                   </div>
                   <div class="checkbox-item">
-                    <input type="checkbox" name="callAgain" value="callAgain">
+                    <input type="checkbox" name="checkbox-item" value="callAgain">
                     <span class="checkbox-span">callAgain</span>
                   </div>
                   <div class="checkbox-item">
-                    <input type="checkbox" name="checkNumber" value="checkNumber">
+                    <input type="checkbox" name="checkbox-item" value="checkNumber">
                     <span class="checkbox-span">checkNumber</span>
                   </div>
                   <div class="checkbox-item">
-                    <input type="checkbox" name="noAnswear" value="noAnswear">
+                    <input type="checkbox" name="checkbox-item" value="noAnswear">
                     <span class="checkbox-span">noAnswear</span>
                   </div>
                   <div class="checkbox-item">
-                    <input type="checkbox" name="noCall" value="noCall">
+                    <input type="checkbox" name="checkbox-item" value="noCall">
                     <span class="checkbox-span">noCall</span>
                   </div>
                   <div class="checkbox-item">
-                    <input type="checkbox" name="callAgain" value="callAgain">
+                    <input type="checkbox" name="checkbox-item" value="callAgain">
                     <span class="checkbox-span">callAgain</span>
                   </div>
                 </fieldset>
@@ -627,14 +645,14 @@
                 </div>
               </div>
               <div class="submit-button">
-                <submit href="#" class="btn"> Send </submit>
+                <submit type="submit" class="btn"> Send </submit>
               </div>
             </div>
           </form>
         </article>
       </section>
     </div>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>
