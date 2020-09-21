@@ -41,9 +41,11 @@
       position: relative;
       transition: $transition;
       cursor: pointer;
+
       &:hover {
         background-color: #F5F5F2;
       }
+
       &::after {
         content: '';
         width: 7px;
@@ -58,6 +60,7 @@
 
     &__icon-personaldata {
       position: relative;
+
       &::after {
         content: '';
         width: 20px;
@@ -76,7 +79,7 @@
       color: blue;
       padding-left: 0;
       margin: 0;
-      display:inline-block;
+      display: inline-block;
       margin: 0 10px 0 0;
     }
   }
@@ -93,15 +96,18 @@
   background-color: orange;
   color: $color-light;
   transition: $transition;
+
   &:hover {
     background-color: $color-light;
     color: $color-dark;
   }
 }
+
 .icon-close {
   color: white;
   font-size: 0px;
 }
+
 .sidebar {
   top: 0;
   left: 0;
@@ -122,6 +128,7 @@
   &__burger {
     color: $font-color;
     font-size: 1.5rem;
+
     &:hover {
       color: $color-light;
     }
@@ -137,6 +144,7 @@
       padding: 10px 0;
       min-width: 200px;
       position: relative;
+
       &::before {
         content: '';
         width: 2px;
@@ -152,37 +160,45 @@
         background-color: rgba(255, 255, 255, 0.1);
         color: $color-light;
       }
+
       a {
         color: inherit;
         text-decoration: none;
         cursor: pointer;
       }
     }
+
     &__item:hover::before {
       transform: translateY(-21.65px);
       height: 43.2px;
     }
   }
+
   &__manager {
     color: $font-color;
     text-align: center;
     letter-spacing: 1px;
   }
+
   &__photo {
     border-radius: 50%;
     background-size: cover;
     position: relative;
   }
+
   &__manager__wrapper{
     display: flex;
     justify-content: center;
+
     &:hover {
       cursor: pointer;
       background-color: rgba(255, 255, 255, 0.1);
     }
+
     p {
       position: relative;
       color: $font-color;
+
       &::after {
         content: '';
         width: 10px;
@@ -211,6 +227,7 @@
   margin: 50px 10px 20px 225px;
   background-color: white;
   background-color: white;
+
   &__post {
     .article-header {
       color: $font-color-dark;
@@ -218,12 +235,14 @@
       padding: 10px 0 10px 20px;
       font-weight: $font-bold;
     }
+
     &__datePicker {
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100px;
       border-bottom: $border-dark-style;
+
       .icon-calendar {
         vertical-align: middle;
         line-height: 40px;
@@ -231,6 +250,7 @@
         border-left: none;
         cursor: pointer;
       }
+
       &__refresh {
         color: $color-light;
         padding: 10px 15px;
@@ -239,6 +259,7 @@
         border-radius: $radius;
         transition: $transition;
         cursor: pointer;
+
         &:hover {
           background-color: $color-light;
           color: orange;
@@ -252,15 +273,18 @@
         padding: 12px 5px;
         overflow: hidden;
         z-index: 0;
+
         &:nth-child(2){
           border-left: none;
           border-right: none;
         }
+
         &:focus {
           outline-width: 0;
         }
       }
     }
+
     &__details {
       display: flex;
       justify-content: space-around;
@@ -268,13 +292,15 @@
       flex-wrap: wrap;
       height: 200px;
       margin: 40px 0;
-      p:nth-child(5){
-          flex-basis: 84%;
-          margin-top: 40px;
-          color: $font-color-dark;
-          font-weight: $font-bold;
 
-        }
+      p:nth-child(5){
+        flex-basis: 84%;
+        margin-top: 40px;
+        color: $font-color-dark;
+        font-weight: $font-bold;
+
+      }
+
       &__list {
         flex-basis: 34%;
         color: $font-color;
@@ -282,69 +308,30 @@
         display: flex;
         justify-content: space-between;
         border-bottom: $border-dark-style;
-        span {
-          color: black;
-          font-weight: $font-semibold;
-        }
-      }
-    }
-    &__chart {
-      display: flex;
-      justify-content: center;
-      align-content: center;
-      flex-wrap: wrap;
-
-      p:nth-child(2){
-        flex-basis: 90px;
-        &::after {
-          background-color: lighten(orange, 20%);
-        }
-      }
-      p:nth-child(3){
-        flex-basis: 100px;
-        background-color: $color-light;
-        &::after {
-          background-color: lighten(green, 20%);
-        }
-      }
-      img {
-        width: 85%;
-        padding: 0 0 40px 0;
-      }
-      &__legend {
-        flex-basis: 120px;
-        padding: 8px 20px;
-        background-color: lighten($color-dark, 70%);
-        border-radius: $radius;
-        text-align: center;
-        position: relative;
-        margin: 0 20px 40px 0;
-        &::after {
-        content: '';
-          width: 15px;
-          height: 15px;
-          background-color: lighten(blue, 20%);
-          position: absolute;
-          border-radius: 50%;
-          top: 32%;
-          left: 10%;
-        }
       }
     }
   }
 }
 
+.amount {
+  color: black;
+  font-weight: $font-semibold;
+}
+
 .second-wrapper {
   margin-top: 50px;
+
   .main-wrapper__links__content {
     display: flex;
     justify-content: center;
     align-content: center;
     flex-wrap: wrap;
     flex-basis: 100%;
+
     p:last-of-type {
       border-bottom: $border-dark-style;
     }
+
     &__btn, .btn {
       justify-content: center;
       flex-basis: 130px;
@@ -361,11 +348,13 @@
       border-color: orange;
       color: white;
       background-image: linear-gradient(45deg, orange 50%, transparent 50%);
+
       &:hover {
         color: orange;
         background-position: 100% 0%;
       }
     }
+
     &__link {
       flex-basis: 85%;
       display: flex;
@@ -378,32 +367,35 @@
       margin: 0 auto 0 auto;
       transition: $transition;
       height: 60px;
+
       i:nth-child(3){
         color: orange;
       }
+
       &:hover {
         background-color: lighten($color-dark, 70%);
-        color: lighten($color-dark, 10%)
+        color: lighten($color-dark, 10%);
       }
+
       &:hover .link-icon {
         transform: scale(1);
       }
+
       .link-name {
         flex-grow: 3;
         display: inline;
         margin-left: 20px;
         width: 100px;
       }
+
       .span-link {
         width: 150px;
       }
+
       span {
         flex-grow: 4;
-        a {
-          text-decoration: none;
-          font-weight: $font-semibold;
-        }
       }
+
       .link-icon {
         flex-grow: 0.5;
         transition: $transition;
@@ -411,6 +403,11 @@
       }
     }
   }
+}
+
+.link {
+  text-decoration: none;
+  font-weight: $font-semibold;
 }
 
 /* Personal details */
@@ -422,21 +419,26 @@ form {
     padding-bottom: 30px;
     border-bottom: $border-dark-style;
   }
+
   div:nth-child(5){
     padding-top: 30px;
   }
+
   div:nth-child(7) {
     padding-bottom: 30px;
     border-bottom: $border-dark-style;
   }
+
   div:nth-child(8) {
     padding-top: 30px;
     padding-bottom: 30px;
     border-bottom: $border-dark-style;
   }
+
   div:nth-child(9) {
     padding-top: 30px;
   }
+
   div:nth-child(10){
     padding: 0 0 20px 0;
     border-bottom: $border-dark-style;
@@ -444,6 +446,7 @@ form {
 
   .form__row {
     display: flex;
+
     &__name {
       flex-basis: 50%;
       text-align: right;
@@ -451,9 +454,11 @@ form {
       color: $font-color-dark;
       font-weight: $font-semibold;
     }
+
     &__input {
       flex-basis: 50%;
       text-align: left;
+
       .form-input {
         height: 35px;
         width: 200px;
@@ -466,6 +471,7 @@ form {
 }
 
 /* Payout and Details */
+
 .table-wrap {
   overflow-x: auto;
 }
@@ -481,13 +487,14 @@ th, td {
   text-align: left;
   padding: 8px;
   min-width: 100px;
-  height: 50px
+  height: 50px;
 }
 
 tr {
   border-bottom: $border-dark-style;
   transition: $transition;
   cursor: pointer;
+
   &:hover {
     background-color: rgba(0,0,0,0.2);
     color: $color-dark;
@@ -500,11 +507,13 @@ tbody {
       background-color: white;
     }
   }
+
   tr:nth-child(odd) {
     &:hover {
       background-color: white;
     }
   }
+
   tr th {
     transition: $transition;
     border-radius: $radius;
@@ -512,6 +521,7 @@ tbody {
     text-align: center;
     font-weight: 600;
   }
+
   tr td {
     text-align: center;
   }
@@ -522,16 +532,17 @@ tbody {
   }
 }
 
-  .pseudo-slider {
-    text-align: center;
-    height: 60px;
-    margin-top: 40px;
+.pseudo-slider {
+  text-align: center;
+  height: 60px;
+  margin-top: 40px;
 
   .pseudo-slider-list {
     text-decoration: none;
-    display:inline-block;
+    display: inline-block;
     padding: 0;
   }
+
   .pseudo-slider-list li {
     display: inline-block;
     padding: 0 10px;
@@ -543,12 +554,14 @@ tbody {
     height: 30px;
     transition: $transition;
     cursor: pointer;
+
     &:hover {
       background-color: rgba(0,0,0,0.2);
       border-radius: 50%;
       color: orange;
     }
   }
+
   .pseudo-slider-arrow-left {
     font-size: 15px;
     margin-right: 20px;
@@ -556,6 +569,7 @@ tbody {
     height: 30px;
     cursor: pointer;
   }
+
   .pseudo-slider-arrow-right {
     background-color: $color-light;
     color: black;
@@ -569,8 +583,9 @@ tbody {
 /* Postback section */
 
 form {
-  padding:0;
+  padding: 0;
 }
+
 .postback-wrapper {
   display: flex;
   justify-content: center;
@@ -587,26 +602,31 @@ form {
     font-weight: 600;
     padding-left: 8px;
   }
+
   textarea {
     min-height: 150px;
     width: 97%;
     border-color: lighten($color-dark, 50%);
     color: black;
     resize: none;
+
     &:focus {
       outline-width: 0;
     }
   }
 }
+
 .select-wrapper {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
   margin-top: 30px;
+
   &__select {
     .postback-type {
       padding-left: 0;
     }
+
     select {
       height: 30px;
       padding: 5px;
@@ -615,52 +635,61 @@ form {
     }
   }
 }
+
 .checkbox-range__wrapper {
   display: flex;
   flex-wrap: wrap;
   margin: 50px 0 30px 0;
+
   &__checkbox {
     flex-basis: 49%;
     border: $border-dark-style;
     border-right: none;
+
     .not {
       color: red;
       font-weight: $font-bold;
       padding-left: 10px;
     }
+
     fieldset {
       border: none;
       overflow-y: scroll;
       height: 120px;
       margin-bottom: 20px;
-      & > div {
+
+      div {
         padding: 0;
         border: none;
         padding: 3px 0 3px 0;
-        span {
-          padding-left: 10px;
-        }
+
       }
     }
   }
+
   &__range {
     flex-basis: 49%;
     border: $border-dark-style;
+
     .range {
       padding-left: 10px;
     }
   }
 }
+
 .submit-button {
   text-align: right;
   margin-right: 3%;
   padding-bottom: 0;
+
   .btn {
     padding: 10px 25px 10px 25px;
   }
 }
+
 .checkbox-range__wrapper__range {
   text-align: center;
+
   input {
     transform: translateY(50px);
   }
@@ -752,20 +781,25 @@ input[type=range]::-ms-track {
   border-width: 16px 0;
   color: transparent;
 }
+
 input[type=range]::-ms-fill-lower {
   background: #2a6495;
   border-radius: 2.6px;
 }
+
 input[type=range]:focus::-ms-fill-lower {
   background: #3071a9;
 }
+
 input[type=range]::-ms-fill-upper {
   background: orange;
   border-radius: 2.6px;
 }
+
 input[type=range]:focus::-ms-fill-upper {
   background: #367ebd;
 }
+
 .error {
   display: block;
   width: 100%;
@@ -800,23 +834,25 @@ input[type=range]:focus::-ms-fill-upper {
   position: relative;
   padding: 8px 30px 30px 20px;
   display: none;
-    .modal-p {
-      display: block;
-      margin: 0;
-      min-width: 320px;
-      border-bottom: $border-dark-style;
-      font-size: 12px;
 
-    }
-    .btn-close {
-      top: 0;
-      right: 0;
-      position: absolute;
-      padding: 5px 7px 0 0;
-      font-size: 18px;
-      cursor: pointer;
-    }
-    .modal-manager {
+  .modal-p {
+    display: block;
+    margin: 0;
+    min-width: 320px;
+    border-bottom: $border-dark-style;
+    font-size: 12px;
+  }
+
+  .btn-close {
+    top: 0;
+    right: 0;
+    position: absolute;
+    padding: 5px 7px 0 0;
+    font-size: 18px;
+    cursor: pointer;
+  }
+
+  .modal-manager {
     justify-content: left;
     margin: 20px 0;
     border-bottom: $border-dark-style;
@@ -830,6 +866,7 @@ input[type=range]:focus::-ms-fill-upper {
     padding: 5px 10px;
     margin: 10px 0;
     position: relative;
+
     &::before {
       position: absolute;
       content: '';
@@ -842,15 +879,19 @@ input[type=range]:focus::-ms-fill-upper {
       border-color: transparent transparent transparent lighten($color-dark, 60%);
     }
   }
+
   p:nth-child(6) {
     background-color: lighten($color-dark, 20%);
+
     &::before {
       border-color: transparent transparent transparent lighten($color-dark, 20%);
     }
   }
+
   .chat-3 {
     margin-bottom: 50px;
   }
+
   .send-msg {
     border-top: $border-dark-style;
     margin-top: 30px;
@@ -859,17 +900,20 @@ input[type=range]:focus::-ms-fill-upper {
     justify-content: flex-end;
     position: relative;
     width: 100%;
+
     .btn-send-msg {
       justify-content: flex-end;
       margin: 0;
       flex-basis: 50px;
       line-height: 10px;
     }
+
     .icon-message {
       position: absolute;
       left: 5px;
-      top: 50%
+      top: 50%;
     }
+
     .icon-message.hide {
       display: none;
     }
@@ -878,6 +922,7 @@ input[type=range]:focus::-ms-fill-upper {
       flex-basis: 100%;
       margin-right: 20px;
       min-width: 100px;
+
       &:focus {
         outline: none;
       }
@@ -896,25 +941,31 @@ input[type=range]:focus::-ms-fill-upper {
   .checkbox-range__wrapper__range {
     height: 150px;
   }
+
   .input[type=range] {
     transform: translateY(43px);
   }
+
   .checkbox-range__wrapper__range input {
     transform: translateY(23px);
   }
+
   .submit-button {
     margin-bottom: 50px;
   }
+
   submit .btn {
     display: block;
     width: 120px;
     margin-top: 60px;
   }
+
   .header {
     &__wrapper {
       transform: translateX(-40px);
     }
   }
+
   .icon-close {
     font-size: 17px;
     color: white;
@@ -922,42 +973,40 @@ input[type=range]:focus::-ms-fill-upper {
     display: inline-block;
     cursor: pointer;
   }
+
   .checkbox-range__wrapper {
     justify-content: center;
+
     &__checkbox {
       flex-basis: 80%;
       border: $border-dark-style;
       margin-bottom: 30px;
     }
+
     &__range {
       flex-basis: 80%;
       border: $border-dark-style;
+
       .range {
         padding-left: 10px;
       }
     }
   }
+
   .submit-button {
     margin-right: 10%;
   }
+
   .placeholders {
     width: 51%;
   }
 }
+
 @media(max-width: 576px){
   .main-wrapper{
     margin: -34px 0px 50px 0px;
-    &__post {
-      &__chart{
-        &__legend {
-          max-width: 70px;
-          &::after {
-            left: 2%;
-          }
-        }
-      }
-    }
   }
+
   .icon-close {
     font-size: 17px;
     color: white;
@@ -970,21 +1019,24 @@ input[type=range]:focus::-ms-fill-upper {
     font-size: 0.7rem;
     max-width: 80 px;
   }
+
   .span-link {
     font-size: 0.6rem;
     overflow: hidden;
   }
+
   .link-icon {
     padding: 0 3px;
   }
 
   .header {
-    bottom:0!important;
+    bottom: 0!important;
     top: initial;
     width: 100%;
     z-index: 4;
     min-width: 400px;
     height: 50px;
+
     &__wrapper {
       justify-content: center;
       height: 50px;
@@ -994,7 +1046,7 @@ input[type=range]:focus::-ms-fill-upper {
       &__wallet {
         padding: 0 5px;
         border-left: none;
-        padding-left:0;
+        padding-left: 0;
       }
 
       &__amount-of-cash {
@@ -1011,6 +1063,7 @@ input[type=range]:focus::-ms-fill-upper {
 
       &__icon-personaldata {
         padding: 0 5px;
+
         &::after {
           left: 10%;
           top: 28%;
@@ -1026,6 +1079,7 @@ input[type=range]:focus::-ms-fill-upper {
       }
     }
   }
+
   .sidebar {
     min-width: 100px;
     height: 100%;
@@ -1051,24 +1105,29 @@ input[type=range]:focus::-ms-fill-upper {
         font-size: 0.7rem;
         max-height: 23px;
       }
+
       &__item:hover::before {
         transform: translateY(-11.5px);
         height: 23px;
       }
     }
+
     &__manager {
       font-size: 0.7rem;
     }
   }
+
   form {
     .form__row {
       flex-wrap: wrap;
+
       &__name {
         flex-basis: 100%;
         text-align: center;
         padding-right: 0;
         margin: 0 0 1% 0;
       }
+
       &__input {
         flex-basis: 100%;
         text-align: center;
@@ -1076,33 +1135,38 @@ input[type=range]:focus::-ms-fill-upper {
       }
     }
   }
+
   tr, th {
     font-size: 0.6rem;
   }
 
-    .pseudo-slider {
-      height: 30px;
-      margin-top: 20px;
-      padding-bottom: 200px;
-      .pseudo-slider-list {
-        padding-left: 0;
-      }
+  .pseudo-slider {
+    height: 30px;
+    margin-top: 20px;
+    padding-bottom: 200px;
+
+    .pseudo-slider-list {
+      padding-left: 0;
+    }
 
     .pseudo-slider-list li {
       font-size: 10px;
       line-height: 15px;
       width: 15px;
       height: 15px;
+
       &:hover {
         background-color: white;
       }
     }
+
     .pseudo-slider-arrow-left {
       font-size: 10px;
       width: 15px;
       height: 15px;
       margin-right: 0;
     }
+
     .pseudo-slider-arrow-right {
       font-size: 10px;
       margin-left: 10px;
@@ -1110,39 +1174,50 @@ input[type=range]:focus::-ms-fill-upper {
       height: 15px;
     }
   }
+
   .checkbox-range__wrapper {
     justify-content: center;
+
     &__checkbox {
       flex-basis: 100%;
       border: $border-dark-style;
       margin-bottom: 30px;
     }
+
     &__range {
       flex-basis: 100%;
       border: $border-dark-style;
+
       .range {
         padding-left: 10px;
       }
     }
   }
+
   .submit-button {
     margin-right: 10%;
   }
+
   .placeholders {
     width: 51%;
   }
+
   .checkbox-range__wrapper__range {
     height: 150px;
   }
+
   .input[type=range] {
     transform: translateY(43px);
   }
+
   .checkbox-range__wrapper__range input {
     transform: translateY(23px);
   }
+
   .submit-button {
     margin-bottom: 50px;
   }
+
   submit .btn {
     display: block;
     width: 120px;
@@ -1154,6 +1229,7 @@ input[type=range]:focus::-ms-fill-upper {
   .placeholders {
     width: 51%;
   }
+
   .icon-close {
     font-size: 17px;
     color: white;
@@ -1161,17 +1237,20 @@ input[type=range]:focus::-ms-fill-upper {
     display: inline-block;
     cursor: pointer;
   }
+
   .link-name {
     font-size: 0.7rem;
     min-width: 100px;
   }
+
   .header {
-    bottom:0!important;
+    bottom: 0!important;
     top: initial;
     width: 100%;
     z-index: 4;
     min-width: 400px;
     height: 50px;
+
     &__wrapper {
       justify-content: center;
       height: 50px;
@@ -1197,6 +1276,7 @@ input[type=range]:focus::-ms-fill-upper {
 
       &__icon-personaldata {
         padding: 0 5px;
+
         &::after {
           left: 10%;
           top: 28%;
@@ -1242,24 +1322,29 @@ input[type=range]:focus::-ms-fill-upper {
         font-size: 0.7rem;
         max-height: 23px;
       }
+
       &__item:hover::before {
         transform: translateY(-11.5px);
         height: 23px;
       }
     }
+
     &__manager {
       font-size: 0.7rem;
     }
   }
+
   form {
     .form__row {
       flex-wrap: wrap;
+
       &__name {
         flex-basis: 100%;
         text-align: center;
         padding-right: 0;
         margin: 0 0 1% 0;
       }
+
       &__input {
         flex-basis: 100%;
         text-align: center;
@@ -1267,32 +1352,38 @@ input[type=range]:focus::-ms-fill-upper {
       }
     }
   }
+
   tr, th {
     font-size: 0.6rem;
   }
-   .pseudo-slider {
-      height: 30px;
-      margin-top: 20px;
-      padding-bottom: 200px;
-      .pseudo-slider-list {
-        padding-left: 0;
-      }
+
+  .pseudo-slider {
+    height: 30px;
+    margin-top: 20px;
+    padding-bottom: 200px;
+
+    .pseudo-slider-list {
+      padding-left: 0;
+    }
 
     .pseudo-slider-list li {
       font-size: 10px;
       line-height: 15px;
       width: 15px;
       height: 15px;
+
       &:hover {
         background-color: white;
       }
     }
+
     .pseudo-slider-arrow-left {
       font-size: 10px;
       width: 15px;
       height: 15px;
       margin-right: 0;
     }
+
     .pseudo-slider-arrow-right {
       font-size: 10px;
       margin-left: 10px;
@@ -1303,76 +1394,96 @@ input[type=range]:focus::-ms-fill-upper {
 
   .checkbox-range__wrapper {
     justify-content: center;
+
     &__checkbox {
       flex-basis: 100%;
       border: $border-dark-style;
       margin-bottom: 30px;
     }
+
     &__range {
       flex-basis: 100%;
       border: $border-dark-style;
+
       .range {
         padding-left: 10px;
       }
     }
   }
+
   .submit-button {
     margin-right: 10%;
   }
+
   .checkbox-range__wrapper__range {
     height: 150px;
   }
+
   .input[type=range] {
     transform: translateY(43px);
   }
+
   .checkbox-range__wrapper__range input {
     transform: translateY(23px);
   }
+
   .submit-button {
     margin-bottom: 50px;
   }
+
   submit .btn {
     display: block;
     width: 120px;
     margin-top: 60px;
   }
 }
+
 @media(min-width: 577px) and (max-width: 755px) {
   .sidebar {
     min-width: 100px;
     display: block;
     z-index: 4;
   }
+
   .checkbox-range__wrapper {
     justify-content: center;
+
     &__checkbox {
       flex-basis: 80%;
       border: $border-dark-style;
       margin-bottom: 30px;
     }
+
     &__range {
       flex-basis: 80%;
       border: $border-dark-style;
+
       .range {
         padding-left: 10px;
       }
     }
   }
+
   .submit-button {
     margin-right: 10%;
   }
+
   .checkbox-range__wrapper__range {
     height: 150px;
   }
+
   .input[type=range] {
     transform: translateY(43px);
   }
+
   .checkbox-range__wrapper__range input {
     transform: translateY(23px);
   }
+
   .submit-button {
     margin-bottom: 50px;
   }
+
   submit .btn {
     display: block;
     width: 120px;
@@ -1380,14 +1491,11 @@ input[type=range]:focus::-ms-fill-upper {
   }
 }
 
-@media(min-width: 993px) {
-
-}
-
 @media(max-height: 340px) {
   .sidebar__manager__wrapper {
     display: none;
   }
+
   .sidebar__manager {
     display: none;
   }

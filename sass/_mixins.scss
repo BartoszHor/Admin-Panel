@@ -17,31 +17,30 @@
 }
 
 .normalized-p {
-    text-align: left;
-    color: $font-color;
-    font-weight: 600;
-  }
+  text-align: left;
+  color: $font-color;
+  font-weight: 600;
+}
 
 .btn {
-      justify-content: center;
-      flex-basis: 130px;
-      text-align: center;
-      margin: 40px auto 60px auto;
-      padding: 10px;
-      border-radius: $radius;
-      text-decoration: none;
-      cursor: pointer;
-      border: 2px solid;
-      background-position: 0% 100%;
-      background-size: 250%;
-      transition: $transition;
-      border-color: orange;
-      color: white;
-      background-image: linear-gradient(45deg, orange 50%, transparent 50%);
-      &:hover {
-        color: orange;
-        background-position: 100% 0%;
-      }
-    }
+  justify-content: center;
+  flex-basis: 130px;
+  text-align: center;
+  margin: 40px auto 60px auto;
+  padding: 10px;
+  border-radius: $radius;
+  text-decoration: none;
+  cursor: pointer;
+  border: 2px solid;
+  background-position: 0% 100%;
+  background-size: 250%;
+  transition: $transition;
+  border-color: orange;
+  color: white;
+  background-image: linear-gradient(45deg, orange 50%, transparent 50%);
 
-
+  &:hover {
+    color: orange;
+    background-position: 100% 0%;
+  }
+}
