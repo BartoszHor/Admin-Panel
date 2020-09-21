@@ -78,7 +78,6 @@
       margin: 0;
       display:inline-block;
       margin: 0 10px 0 0;
-
     }
   }
 }
@@ -467,6 +466,9 @@ form {
 }
 
 /* Payout and Details */
+.table-wrap {
+  overflow-x: auto;
+}
 
 table {
   border-collapse: collapse;
@@ -523,12 +525,12 @@ tbody {
   .pseudo-slider {
     text-align: center;
     height: 60px;
-    padding-left: none;
     margin-top: 40px;
 
   .pseudo-slider-list {
     text-decoration: none;
     display:inline-block;
+    padding: 0;
   }
   .pseudo-slider-list li {
     display: inline-block;

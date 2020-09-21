@@ -15,8 +15,8 @@
         <div class="modal" id="myModal">
           <p class="modal-p normalized-p">ONLINE CHAT WITH YOUR PERSONAL MANAGER</p>
           <div class="btn-close js--close-modal"> X </div>
-          <div class="sidebar__manager__wrapper modal-manager" id="1">
-            <img src="https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?cs=srgb&dl=pexels-italo-melo-2379005.jpg&fm=jpg" class="sidebar__photo" width="50" height="50">
+          <div class="sidebar__manager__wrapper modal-manager">
+            <img src="https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?cs=srgb&dl=pexels-italo-melo-2379005.jpg&fm=jpg" class="sidebar__photo" width="50" height="50" alt="Manager photo">
             <p class="manager p1"> Pawel</p>
           </div>
           <p class="chat-1"> Hello. Can I help You somehow? </p><br>
@@ -25,7 +25,7 @@
           <div class="send-msg">
             <input type="search" class="search-input" placeholder="       Enter Your msg" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your text'">
             <i class="icon-message"></i>
-            <button class="btn btn-send-msg"> Send </button>
+            <button type="submit" class="btn btn-send-msg"> Send </button>
 
           </div>
         </div>
@@ -50,22 +50,22 @@
         <i class="icon-close"></i>
         <i class="fas fa-bars sidebar__burger p1"></i>
         <ul class="sidebar__list">
-          <li class="sidebar__list__item"><a href="#general" id="1"> <i class="icon-general header__wrapper__icon-quit p2"></i> General </a></li>
-          <li class="sidebar__list__item"><a href="#details" id="6"> <i class="icon-details header__wrapper__icon-quit p2"></i> Details </a></li>
-          <li class="sidebar__list__item"><a href="#links" id="2"> <i class="icon-links header__wrapper__icon-quit p2"></i> Links </a></li>
-          <li class="sidebar__list__item"><a href="#banners" id="3"> <i class="icon-banners header__wrapper__icon-quit p2"></i> Banners </a></li>
-          <li class="sidebar__list__item"><a href="#personal-data" id="4"> <i class="icon-personaldata header__wrapper__icon-quit p2"></i> Personal Data </a></li>
-          <li class="sidebar__list__item"><a href="#payout" id="5"> <i class="icon-payout header__wrapper__icon-quit p2"></i> Payout </a><li>
-          <li class="sidebar__list__item"><a href="#postback" id="7"> <i class="icon-postback header__wrapper__icon-quit p2"></i> Postback </a> </li>
+          <li class="sidebar__list__item"><a href="#1" id="1" > <i class="icon-general header__wrapper__icon-quit p2"></i> General </a></li>
+          <li class="sidebar__list__item"><a href="#6" id="6"> <i class="icon-details header__wrapper__icon-quit p2"></i> Details </a></li>
+          <li class="sidebar__list__item"><a href="#2" id="2"> <i class="icon-links header__wrapper__icon-quit p2"></i> Links </a></li>
+          <li class="sidebar__list__item"><a href="#3" id="3"> <i class="icon-banners header__wrapper__icon-quit p2"></i> Banners </a></li>
+          <li class="sidebar__list__item"><a href="#4" id="4"> <i class="icon-personaldata header__wrapper__icon-quit p2"></i> Personal Data </a></li>
+          <li class="sidebar__list__item"><a href="#5" id="5"> <i class="icon-payout header__wrapper__icon-quit p2"></i> Payout </a></li>
+          <li class="sidebar__list__item"><a href="#7" id="7"> <i class="icon-postback header__wrapper__icon-quit p2"></i> Postback </a> </li>
         </ul>
         <p class="sidebar__manager">YOUR MANAGER</p>
         <div class="sidebar__manager__wrapper sidebar-manager">
-          <img src="https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?cs=srgb&dl=pexels-italo-melo-2379005.jpg&fm=jpg" class="sidebar__photo" width="50" height="50">
+          <img src="https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?cs=srgb&dl=pexels-italo-melo-2379005.jpg&fm=jpg" class="sidebar__photo" width="50" height="50" alt="Manager photo">
           <p class="manager p1"> Pawel</p>
         </div>
       </section>
 
-      <section class="main-wrapper" id="1">
+      <section class="main-wrapper" data="1">
         <article class="main-wrapper__post">
           <div class="main-wrapper__post__title article-header"> GENERAL STATISTIC </div>
           <div class="main-wrapper__post__datePicker">
@@ -86,7 +86,7 @@
           </div>
         </article>
       </section>
-      <section class="main-wrapper second-wrapper" id="2">
+      <section class="main-wrapper second-wrapper" data="2">
         <article class="main-wrapper__links">
           <div class="main-wrapper__links__header article-header"> LINKS </div>
           <div class="main-wrapper__links__content">
@@ -149,7 +149,7 @@
           </div>
         </article>
       </section>
-      <section class="main-wrapper second-wrapper" id="3">
+      <section class="main-wrapper second-wrapper" data="3">
         <article class="main-wrapper__links">
           <div class="main-wrapper__links__header article-header"> BANNERS </div>
           <div class="main-wrapper__links__content">
@@ -192,10 +192,10 @@
           </div>
         </article>
       </section>
-      <section class="main-wrapper second-wrapper" id="4">
+      <section class="main-wrapper second-wrapper" data="4">
         <article>
           <div class="article-header"> PERSONAL DATA </div>
-          <form class="form" action="" method="POST">
+          <form class="form" action="" method="post">
             <div class="form__row">
               <p class="form__row__name"> Name </p>
               <p class="form__row__input"><input class="form-input" type="text" placeholder="Name" name="name"></p>
@@ -237,12 +237,12 @@
               <p class="form__row__input"><input class="form-input" type="password" name="repeat"></p>
             </div>
             <div class="main-wrapper__links__content wrap">
-              <submit type="submit" class="btn"> Send </submit>
+              <button type="submit" class="btn"> Send </button>
             </div>
           </form>
         </article>
       </section>
-       <section class="main-wrapper" id="5">
+       <section class="main-wrapper" data="5">
         <article>
           <div class="article-header"> PAYOUT HISTORY</div>
           <div class="main-wrapper__post__datePicker">
@@ -251,73 +251,75 @@
             <i class="icon-calendar p1"></i>
             <i class="icon-refresh main-wrapper__post__datePicker__refresh p1"></i>
           </div>
-          <div style="overflow-x:auto">
+          <div class="table-wrap">
             <table>
-              <tr>
-                <th>Date</th>
-                <th>Amount($)</th>
-                <th>Deal</th>
-                <th>Account</th>
-              </tr>
-              <tr>
-                <td>20/09/2020</td>
-                <td>32,323.00</td>
-                <td>clia(242)</td>
-                <td>bank</td>
-              </tr>
-              <tr>
-                <td>20/09/2020</td>
-                <td>32,323.00</td>
-                <td>clia(242)</td>
-                <td>bank</td>
-              </tr>
-              <tr>
-                <td>20/09/2020</td>
-                <td>32,323.00</td>
-                <td>clia(242)</td>
-                <td>bank</td>
-              </tr>
-              <tr>
-                <td>20/09/2020</td>
-                <td>32,323.00</td>
-                <td>clia(242)</td>
-                <td>bank</td>
-              </tr>
-              <tr>
-                <td>20/09/2020</td>
-                <td>32,323.00</td>
-                <td>clia(242)</td>
-                <td>bank</td>
-              </tr>
-              <tr>
-                <td>20/09/2020</td>
-                <td>32,323.00</td>
-                <td>clia(242)</td>
-                <td>bank</td>
-              </tr>
-              <tr>
-                <td>20/09/2020</td>
-                <td>32,323.00</td>
-                <td>clia(242)</td>
-                <td>bank</td>
-              </tr>
-              <tr>
-                <td>20/09/2020</td>
-                <td>32,323.00</td>
-                <td>clia(242)</td>
-                <td>bank</td>
-              </tr>
-              <tr>
-                <td>20/09/2020</td>
-                <td>32,323.00</td>
-                <td>clia(242)</td>
-                <td>bank</td>
-              </tr>
+              <tbody>
+                <tr>
+                  <th scope="col">Date</th>
+                  <th scope="col">Amount($)</th>
+                  <th scope="col">Deal</th>
+                  <th scope="col">Account</th>
+                </tr>
+                <tr>
+                  <td>20/09/2020</td>
+                  <td>32,323.00</td>
+                  <td>clia(242)</td>
+                  <td>bank</td>
+                </tr>
+                <tr>
+                  <td>20/09/2020</td>
+                  <td>32,323.00</td>
+                  <td>clia(242)</td>
+                  <td>bank</td>
+                </tr>
+                <tr>
+                  <td>20/09/2020</td>
+                  <td>32,323.00</td>
+                  <td>clia(242)</td>
+                  <td>bank</td>
+                </tr>
+                <tr>
+                  <td>20/09/2020</td>
+                  <td>32,323.00</td>
+                  <td>clia(242)</td>
+                  <td>bank</td>
+                </tr>
+                <tr>
+                  <td>20/09/2020</td>
+                  <td>32,323.00</td>
+                  <td>clia(242)</td>
+                  <td>bank</td>
+                </tr>
+                <tr>
+                  <td>20/09/2020</td>
+                  <td>32,323.00</td>
+                  <td>clia(242)</td>
+                  <td>bank</td>
+                </tr>
+                <tr>
+                  <td>20/09/2020</td>
+                  <td>32,323.00</td>
+                  <td>clia(242)</td>
+                  <td>bank</td>
+                </tr>
+                <tr>
+                  <td>20/09/2020</td>
+                  <td>32,323.00</td>
+                  <td>clia(242)</td>
+                  <td>bank</td>
+                </tr>
+                <tr>
+                  <td>20/09/2020</td>
+                  <td>32,323.00</td>
+                  <td>clia(242)</td>
+                  <td>bank</td>
+                </tr>
+              </tbody>
             </table>
           </div>
           <div class="pseudo-slider">
+            <i class="icon-arrow-left pseudo-slider-arrow-left"></i>
             <ul class="pseudo-slider-list">
-              <i class="icon-arrow-left pseudo-slider-arrow-left"></i>
               <li>1</li>
               <li>2</li>
               <li>3</li>
@@ -327,12 +329,12 @@
               <li>7</li>
               <li>8</li>
               <li>9</li>
-              <i class="icon-arrow-right pseudo-slider-arrow-right"></i>
             </ul>
+            <i class="icon-arrow-right pseudo-slider-arrow-right"></i>
           </div>
         </article>
       </section>
-      <section class="main-wrapper" id="6">
+      <section class="main-wrapper" data="6">
         <article>
           <div class="article-header"> DETAILS </div>
           <div class="main-wrapper__post__datePicker">
@@ -341,169 +343,171 @@
             <i class="icon-calendar p1"></i>
             <i class="icon-refresh main-wrapper__post__datePicker__refresh p1"></i>
           </div>
-          <div style="overflow-x:auto">
+          <div class="table-wrap">
             <table>
-              <tr>
-                <th>Track Name</th>
-                <th>Date</th>
-                <th>Visits</th>
-                <th>Unique</th>
-                <th>Signups</th>
-                <th>FTD</th>
-                <th>Depositories</th>
-                <th>Deposits($)</th>
-                <th>Payout</th>
-                <th>Turnover</th>
-                <th>Deals</th>
-              </tr>
-              <tr>
-                <td>front/test</td>
-                <td>20/09/2020</td>
-                <td>232</td>
-                <td>115</td>
-                <td>22</td>
-                <td>12</td>
-                <td>6</td>
-                <td>32,002.00</td>
-                <td>234.00</td>
-                <td>323,002.00</td>
-                <td>kpb(200)</td>
-              </tr>
-              <tr>
-                <td>front/test</td>
-                <td>20/09/2020</td>
-                <td>232</td>
-                <td>115</td>
-                <td>22</td>
-                <td>12</td>
-                <td>6</td>
-                <td>32,002.00</td>
-                <td>234.00</td>
-                <td>323,002.00</td>
-                <td>kpb(200)</td>
-              </tr>
-              <tr>
-                <td>front/test</td>
-                <td>20/09/2020</td>
-                <td>232</td>
-                <td>115</td>
-                <td>22</td>
-                <td>12</td>
-                <td>6</td>
-                <td>32,002.00</td>
-                <td>234.00</td>
-                <td>323,002.00</td>
-                <td>kpb(200)</td>
-              </tr>
-              <tr>
-                <td>front/test</td>
-                <td>20/09/2020</td>
-                <td>232</td>
-                <td>115</td>
-                <td>22</td>
-                <td>12</td>
-                <td>6</td>
-                <td>32,002.00</td>
-                <td>234.00</td>
-                <td>323,002.00</td>
-                <td>kpb(200)</td>
-              </tr>
-              <tr>
-                <td>front/test</td>
-                <td>20/09/2020</td>
-                <td>232</td>
-                <td>115</td>
-                <td>22</td>
-                <td>12</td>
-                <td>6</td>
-                <td>32,002.00</td>
-                <td>234.00</td>
-                <td>323,002.00</td>
-                <td>kpb(200)</td>
-              </tr>
-              <tr>
-                <td>front/test</td>
-                <td>20/09/2020</td>
-                <td>232</td>
-                <td>115</td>
-                <td>22</td>
-                <td>12</td>
-                <td>6</td>
-                <td>32,002.00</td>
-                <td>234.00</td>
-                <td>323,002.00</td>
-                <td>kpb(200)</td>
-              </tr>
-              <tr>
-                <td>front/test</td>
-                <td>20/09/2020</td>
-                <td>232</td>
-                <td>115</td>
-                <td>22</td>
-                <td>12</td>
-                <td>6</td>
-                <td>32,002.00</td>
-                <td>234.00</td>
-                <td>323,002.00</td>
-                <td>kpb(200)</td>
-              </tr>
-              <tr>
-                <td>front/test</td>
-                <td>20/09/2020</td>
-                <td>232</td>
-                <td>115</td>
-                <td>22</td>
-                <td>12</td>
-                <td>6</td>
-                <td>32,002.00</td>
-                <td>234.00</td>
-                <td>323,002.00</td>
-                <td>kpb(200)</td>
-              </tr>
-              <tr>
-                <td>front/test</td>
-                <td>20/09/2020</td>
-                <td>232</td>
-                <td>115</td>
-                <td>22</td>
-                <td>12</td>
-                <td>6</td>
-                <td>32,002.00</td>
-                <td>234.00</td>
-                <td>323,002.00</td>
-                <td>kpb(200)</td>
-              </tr>
-              <tr>
-                <td>front/test</td>
-                <td>20/09/2020</td>
-                <td>232</td>
-                <td>115</td>
-                <td>22</td>
-                <td>12</td>
-                <td>6</td>
-                <td>32,002.00</td>
-                <td>234.00</td>
-                <td>323,002.00</td>
-                <td>kpb(200)</td>
-              </tr>
-              <tr>
-                <td>front/test</td>
-                <td>20/09/2020</td>
-                <td>232</td>
-                <td>115</td>
-                <td>22</td>
-                <td>12</td>
-                <td>6</td>
-                <td>32,002.00</td>
-                <td>234.00</td>
-                <td>323,002.00</td>
-                <td>kpb(200)</td>
-              </tr>
+              <tbody>
+                <tr>
+                  <th scope="col">Track Name</th>
+                  <th scope="col">Date</th>
+                  <th scope="col">Visits</th>
+                  <th scope="col">Unique</th>
+                  <th scope="col">Signups</th>
+                  <th scope="col">FTD</th>
+                  <th scope="col">Depositories</th>
+                  <th scope="col">Deposits($)</th>
+                  <th scope="col">Payout</th>
+                  <th scope="col">Turnover</th>
+                  <th scope="col">Deals</th>
+                </tr>
+                <tr>
+                  <td>front/test</td>
+                  <td>20/09/2020</td>
+                  <td>232</td>
+                  <td>115</td>
+                  <td>22</td>
+                  <td>12</td>
+                  <td>6</td>
+                  <td>32,002.00</td>
+                  <td>234.00</td>
+                  <td>323,002.00</td>
+                  <td>kpb(200)</td>
+                </tr>
+                <tr>
+                  <td>front/test</td>
+                  <td>20/09/2020</td>
+                  <td>232</td>
+                  <td>115</td>
+                  <td>22</td>
+                  <td>12</td>
+                  <td>6</td>
+                  <td>32,002.00</td>
+                  <td>234.00</td>
+                  <td>323,002.00</td>
+                  <td>kpb(200)</td>
+                </tr>
+                <tr>
+                  <td>front/test</td>
+                  <td>20/09/2020</td>
+                  <td>232</td>
+                  <td>115</td>
+                  <td>22</td>
+                  <td>12</td>
+                  <td>6</td>
+                  <td>32,002.00</td>
+                  <td>234.00</td>
+                  <td>323,002.00</td>
+                  <td>kpb(200)</td>
+                </tr>
+                <tr>
+                  <td>front/test</td>
+                  <td>20/09/2020</td>
+                  <td>232</td>
+                  <td>115</td>
+                  <td>22</td>
+                  <td>12</td>
+                  <td>6</td>
+                  <td>32,002.00</td>
+                  <td>234.00</td>
+                  <td>323,002.00</td>
+                  <td>kpb(200)</td>
+                </tr>
+                <tr>
+                  <td>front/test</td>
+                  <td>20/09/2020</td>
+                  <td>232</td>
+                  <td>115</td>
+                  <td>22</td>
+                  <td>12</td>
+                  <td>6</td>
+                  <td>32,002.00</td>
+                  <td>234.00</td>
+                  <td>323,002.00</td>
+                  <td>kpb(200)</td>
+                </tr>
+                <tr>
+                  <td>front/test</td>
+                  <td>20/09/2020</td>
+                  <td>232</td>
+                  <td>115</td>
+                  <td>22</td>
+                  <td>12</td>
+                  <td>6</td>
+                  <td>32,002.00</td>
+                  <td>234.00</td>
+                  <td>323,002.00</td>
+                  <td>kpb(200)</td>
+                </tr>
+                <tr>
+                  <td>front/test</td>
+                  <td>20/09/2020</td>
+                  <td>232</td>
+                  <td>115</td>
+                  <td>22</td>
+                  <td>12</td>
+                  <td>6</td>
+                  <td>32,002.00</td>
+                  <td>234.00</td>
+                  <td>323,002.00</td>
+                  <td>kpb(200)</td>
+                </tr>
+                <tr>
+                  <td>front/test</td>
+                  <td>20/09/2020</td>
+                  <td>232</td>
+                  <td>115</td>
+                  <td>22</td>
+                  <td>12</td>
+                  <td>6</td>
+                  <td>32,002.00</td>
+                  <td>234.00</td>
+                  <td>323,002.00</td>
+                  <td>kpb(200)</td>
+                </tr>
+                <tr>
+                  <td>front/test</td>
+                  <td>20/09/2020</td>
+                  <td>232</td>
+                  <td>115</td>
+                  <td>22</td>
+                  <td>12</td>
+                  <td>6</td>
+                  <td>32,002.00</td>
+                  <td>234.00</td>
+                  <td>323,002.00</td>
+                  <td>kpb(200)</td>
+                </tr>
+                <tr>
+                  <td>front/test</td>
+                  <td>20/09/2020</td>
+                  <td>232</td>
+                  <td>115</td>
+                  <td>22</td>
+                  <td>12</td>
+                  <td>6</td>
+                  <td>32,002.00</td>
+                  <td>234.00</td>
+                  <td>323,002.00</td>
+                  <td>kpb(200)</td>
+                </tr>
+                <tr>
+                  <td>front/test</td>
+                  <td>20/09/2020</td>
+                  <td>232</td>
+                  <td>115</td>
+                  <td>22</td>
+                  <td>12</td>
+                  <td>6</td>
+                  <td>32,002.00</td>
+                  <td>234.00</td>
+                  <td>323,002.00</td>
+                  <td>kpb(200)</td>
+                </tr>
+              </tbody>
             </table>
           </div>
           <div class="pseudo-slider">
+            <i class="icon-arrow-left pseudo-slider-arrow-left"></i>
             <ul class="pseudo-slider-list">
-              <i class="icon-arrow-left pseudo-slider-arrow-left"></i>
               <li>1</li>
               <li>2</li>
               <li>3</li>
@@ -513,16 +517,16 @@
               <li>7</li>
               <li>8</li>
               <li>9</li>
-              <i class="icon-arrow-right pseudo-slider-arrow-right"></i>
             </ul>
+            <i class="icon-arrow-right pseudo-slider-arrow-right"></i>
           </div>
         </article>
       </section>
-      <section class="main-wrapper" id="7">
+      <section class="main-wrapper" data="7">
         <article>
           <div class="article-header"> NEW POSTBACK </div>
           <p class="p1"> You can insert some parameters in this postback </p>
-          <form action="" method="POST">
+          <form action="" method="post">
             <div class="postback-wrapper">
               <div class="placeholders">
                 <p class="normalized-p"> Signup </p>
@@ -536,7 +540,7 @@
             <div class="select-wrapper">
               <div class="select-wrapper__select">
                 <p class="normalized-p postback-type"> Postback type </p>
-                <select name="postback" id="postback-type">
+                <select name="postback" id="postback-type0">
                   <option value="none" selected disabled hidden> B2B(http://...) </option>
                   <option value="http://postback-random.com"> http://postback-random.com </option>
                   <option value="http://postback-random2.com"> http://postback-random2.com </option>
@@ -545,7 +549,7 @@
               </div>
               <div class="select-wrapper__select">
                 <p class="normalized-p postback-type"> To countries </p>
-                <select name="postback" id="postback-type">
+                <select name="postback" id="postback-type1">
                   <option value="none" selected disabled hidden> Select countries </option>
                   <optgroup label="Schengen">
                     <option value="http://postback-random.com"> Poland </option>
@@ -561,7 +565,7 @@
               </div>
               <div class="select-wrapper__select">
                 <p class="normalized-p postback-type"> Sending options </p>
-                <select name="postback" id="postback-type">
+                <select name="postback" id="postback-type2">
                   <option value="none" selected disabled hidden> Select </option>
                   <option value="http://postback-random.com"> E-mail </option>
                   <option value="http://postback-random2.com"> Letter </option>
@@ -573,6 +577,7 @@
               <div class="checkbox-range__wrapper__checkbox">
                 <p class="normalized-p postback-type"><span class="not">NOT </span>send statuses </p>
                 <fieldset>
+                  <legend></legend>
                   <div class="checkbox-item">
                     <input type="checkbox" name="checkbox-item" value="checkNumber">
                     <span class="checkbox-span">checkNumber</span>
@@ -645,10 +650,9 @@
                 </div>
               </div>
               <div class="submit-button">
-                <submit type="submit" class="btn"> Send </submit>
+                <button type="submit" class="btn"> Send </button>
               </div>
-            </div>
-          </form>
+            </form>
         </article>
       </section>
     </div>

@@ -22,7 +22,7 @@ for(let datePicker of datePickers){
 function activatePage(pageId) {
   let mainPages = document.querySelectorAll('.main-wrapper');
   for (let page of mainPages) {
-    if (page.id == pageId) {
+    if (page.getAttribute('data') == pageId) {
       page.classList.add('active');
     }
   }
@@ -31,10 +31,10 @@ function activatePage(pageId) {
 function initPage() {
   let pages = document.querySelectorAll('.main-wrapper');
   const idFromHash = window.location.hash.replace('#', '');
-  let pageMatchingHash = pages[0].id;
+  let pageMatchingHash = pages[0].getAttribute('data');
   for (let page of pages) {
-    if(page.id == idFromHash){
-      pageMatchingHash = page.id;
+    if(page.getAttribute('data') == idFromHash){
+      pageMatchingHash = page.getAttribute('data');
       break;
     }
   }
@@ -116,7 +116,7 @@ function pickSection(event) {
   const clickedElement = this;
   let mainSections = document.querySelectorAll('.main-wrapper');
   for (let section of mainSections) {
-    section.classList.toggle('active', section.id == clickedElement.id);
+    section.classList.toggle('active', section.getAttribute('data') == clickedElement.getAttribute('href').replace('#', ''));
     window.location.hash = clickedElement.id;
   }
 }
@@ -135,6 +135,7 @@ document.querySelector('.icon-message').classList.add('hide')
 })
 
 /* Chart */
+
 let ctx = document.getElementById('myChart').getContext('2d');
 let chart = new Chart(ctx, {
     type: 'bar',
@@ -171,11 +172,11 @@ let chart = new Chart(ctx, {
         },
         legend: {
           reverse: true,
-          labels: {
-            boxWidth: 60,
-            fontSize: 15,
-          }
+        labels: {
+          boxWidth: 60,
+          fontSize: 15,
         }
+      }
     }
 });
 
