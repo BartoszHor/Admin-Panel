@@ -22,7 +22,7 @@ for(let datePicker of datePickers){
 function activatePage(pageId) {
   let mainPages = document.querySelectorAll('.main-wrapper');
   for (let page of mainPages) {
-    if (page.getAttribute('data') == pageId) {
+    if (page.getAttribute('data-id') == pageId) {
       page.classList.add('active');
     }
   }
@@ -31,10 +31,10 @@ function activatePage(pageId) {
 function initPage() {
   let pages = document.querySelectorAll('.main-wrapper');
   const idFromHash = window.location.hash.replace('#', '');
-  let pageMatchingHash = pages[0].getAttribute('data');
+  let pageMatchingHash = pages[0].getAttribute('data-id');
   for (let page of pages) {
-    if(page.getAttribute('data') == idFromHash){
-      pageMatchingHash = page.getAttribute('data');
+    if(page.getAttribute('data-id') == idFromHash){
+      pageMatchingHash = page.getAttribute('data-id');
       break;
     }
   }
@@ -101,8 +101,8 @@ function showSidebar() {
     let sidebar = document.querySelector('.sidebar');
     sidebar.style.display = 'block';
   }
-
 }
+document.body.addEventListener('resize', showSidebar);
 
 const sidebarIcon = document.querySelector('.icon-arrow-right');
 sidebarIcon.addEventListener('click', openCloseSidebar);
@@ -116,7 +116,7 @@ function pickSection(event) {
   const clickedElement = this;
   let mainSections = document.querySelectorAll('.main-wrapper');
   for (let section of mainSections) {
-    section.classList.toggle('active', section.getAttribute('data') == clickedElement.getAttribute('href').replace('#', ''));
+    section.classList.toggle('active', section.getAttribute('data-id') == clickedElement.getAttribute('href').replace('#', ''));
     window.location.hash = clickedElement.id;
   }
 }
@@ -174,7 +174,7 @@ let chart = new Chart(ctx, {
     legend: {
       reverse: true,
       labels: {
-        boxWidth: 60,
+        boxWidth: 15,
         fontSize: 15,
       }
     }

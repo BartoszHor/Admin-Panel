@@ -10,15 +10,14 @@ body {
   line-height: 1.7;
   font-weight: $font-normal;
   color: $color-dark;
-  max-height: 100vh;
-}
-
-.container {
-  margin: 0 auto;
 }
 
 i, input {
   cursor: pointer;
+}
+
+header {
+  margin: 14px 0;
 }
 
 /*  */

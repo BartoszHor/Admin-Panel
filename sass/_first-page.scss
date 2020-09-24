@@ -1,6 +1,6 @@
 /* Header */
 
-.header {
+.nav {
   position: fixed;
   top: 0;
   left: 0;
@@ -17,6 +17,8 @@
     background-color: $color-light;
     line-height: 70px;
     flex-wrap: wrap;
+    list-style-type: none;
+    margin: 0;
 
     &__wallet {
       border-left: $header-border-style;
@@ -96,6 +98,8 @@
   background-color: orange;
   color: $color-light;
   transition: $transition;
+  border-radius: 50%;
+  opacity: 0.7;
 
   &:hover {
     background-color: $color-light;
@@ -116,7 +120,6 @@
   background-color: $color-dark;
   min-width: 100px;
   z-index: 3;
-  overflow-y: scroll;
 
   &__header {
     color: $color-light;
@@ -166,11 +169,11 @@
         text-decoration: none;
         cursor: pointer;
       }
-    }
 
-    &__item:hover::before {
-      transform: translateY(-21.65px);
-      height: 43.2px;
+      &:hover::before {
+        transform: translateY(-21.65px);
+        height: 43.2px;
+      }
     }
   }
 
@@ -195,9 +198,12 @@
       background-color: rgba(255, 255, 255, 0.1);
     }
 
-    p {
+    span {
       position: relative;
       color: $font-color;
+      vertical-align: middle;
+      text-align: center;
+      line-height: 50px;
 
       &::after {
         content: '';
@@ -206,7 +212,7 @@
         background-color: lime;
         position: absolute;
         border-radius: 50%;
-        top: -58%;
+        top: 0;
         left: -16%;
         z-index: 2;
       }
@@ -293,12 +299,8 @@
       height: 200px;
       margin: 40px 0;
 
-      p:nth-child(5){
-        flex-basis: 84%;
-        margin-top: 40px;
-        color: $font-color-dark;
-        font-weight: $font-bold;
-
+      &__list {
+        margin: 14px 0;
       }
 
       &__list {
@@ -316,6 +318,13 @@
 .amount {
   color: black;
   font-weight: $font-semibold;
+}
+
+.chart-h4 {
+  color: $font-color-dark;
+  font-weight: $font-bold;
+  padding-left: 2%;
+
 }
 
 .second-wrapper {
@@ -446,6 +455,7 @@ form {
 
   .form__row {
     display: flex;
+    margin: 20px 0;
 
     &__name {
       flex-basis: 50%;
@@ -586,6 +596,14 @@ form {
   padding: 0;
 }
 
+.signup, .deposit {
+  margin: 14px 0;
+}
+
+.not-wrap {
+  margin: 14px 0;
+}
+
 .postback-wrapper {
   display: flex;
   justify-content: center;
@@ -625,6 +643,7 @@ form {
   &__select {
     .postback-type {
       padding-left: 0;
+      margin: 14px 0;
     }
 
     select {
@@ -673,6 +692,7 @@ form {
 
     .range {
       padding-left: 10px;
+      margin: 14px 0;
     }
   }
 }
@@ -694,6 +714,7 @@ form {
     transform: translateY(50px);
   }
 }
+
 
 input[type=range] {
   -webkit-appearance: none;
@@ -835,10 +856,10 @@ input[type=range]:focus::-ms-fill-upper {
   padding: 8px 30px 30px 20px;
   display: none;
 
-  .modal-p {
+  .modal-h1 {
     display: block;
     margin: 0;
-    min-width: 320px;
+    min-width: 220px;
     border-bottom: $border-dark-style;
     font-size: 12px;
   }
@@ -960,7 +981,7 @@ input[type=range]:focus::-ms-fill-upper {
     margin-top: 60px;
   }
 
-  .header {
+  .nav {
     &__wrapper {
       transform: translateX(-40px);
     }
@@ -1029,7 +1050,7 @@ input[type=range]:focus::-ms-fill-upper {
     padding: 0 3px;
   }
 
-  .header {
+  .nav {
     bottom: 0!important;
     top: initial;
     width: 100%;
@@ -1243,7 +1264,7 @@ input[type=range]:focus::-ms-fill-upper {
     min-width: 100px;
   }
 
-  .header {
+  .nav {
     bottom: 0!important;
     top: initial;
     width: 100%;
@@ -1497,6 +1518,112 @@ input[type=range]:focus::-ms-fill-upper {
   }
 
   .sidebar__manager {
+    display: none;
+  }
+}
+
+/* big table media */
+
+@media only screen and (max-width: 760px),
+  (min-device-width: 768px) and (max-device-width: 1024px)  {
+  .table-xl {
+    display: block;
+  }
+
+  .tr-style {
+    border: 1px solid #ccc;
+    font-size: 1rem;
+
+    &:hover {
+      background-color: white;
+    }
+
+    &:nth-child(odd) {
+      background-color: lighten($color-dark, 60%);
+
+      &:hover {
+        background-color: lighten($color-dark, 60%);
+      }
+    }
+  }
+
+  .row-bhv {
+    /* Behave  like a "row" */
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 50%;
+  }
+
+  .row-bhv:before {
+    /* Now like a table header */
+    position: absolute;
+    /* Top/left values mimic padding */
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+  }
+
+  /* Label the data */
+  .row-bhv:nth-of-type(1):before {
+    content: "Track Name";
+    font-weight: $font-bold;
+  }
+
+  .row-bhv:nth-of-type(2):before {
+    content: "Date";
+    font-weight: $font-bold;
+  }
+
+  .row-bhv:nth-of-type(3):before {
+    content: "Visits";
+    font-weight: $font-bold;
+  }
+
+  .row-bhv:nth-of-type(4):before {
+    content: "Unique";
+    font-weight: $font-bold;
+  }
+
+  .row-bhv:nth-of-type(5):before {
+    content: "Signups";
+    font-weight: $font-bold;
+  }
+
+  .row-bhv:nth-of-type(6):before {
+    content: "FTD";
+    font-weight: $font-bold;
+  }
+
+  .row-bhv:nth-of-type(7):before {
+    content: "Depositories";
+    font-weight: $font-bold;
+  }
+
+  .row-bhv:nth-of-type(8):before {
+    content: "Deposits($)";
+    font-weight: $font-bold;
+  }
+
+  .row-bhv:nth-of-type(9):before {
+    content: "Payout";
+    font-weight: $font-bold;
+  }
+
+  .row-bhv:nth-of-type(10):before {
+    content: "Turnover";
+    font-weight: $font-bold;
+  }
+
+  .row-bhv:nth-of-type(11):before {
+    content: "Deals";
+    font-weight: $font-bold;
+  }
+
+
+  .hide {
     display: none;
   }
 }
