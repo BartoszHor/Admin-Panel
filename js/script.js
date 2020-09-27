@@ -1,5 +1,23 @@
 /* General - main page funactions */
 
+document.querySelectorAll('.amount-list__item').forEach(function(item) {
+  item.addEventListener('click', function() {
+    document.querySelector('.js--amount').innerHTML = this.innerHTML;
+  });
+});
+
+document.querySelector('.js--arrow-down').addEventListener('click', function() {
+  document.querySelectorAll('.amount-list__item').forEach(function(item){
+    item.classList.toggle('js--amount-open');
+  });
+});
+
+const addDays = function(dateStr, days){
+  const dateObj = new Date(dateStr);
+  dateObj.setDate(dateObj.getDate() + days);
+  return dateObj;
+};
+
 function formatDate(date) {
   let d = new Date(date),
     month = '' + (d.getMonth() + 1),
@@ -14,9 +32,30 @@ function formatDate(date) {
   return [year, month, day].join('-');
 }
 
-const datePickers = document.querySelectorAll('.datePicker');
+const datePickers = document.querySelectorAll(`input[name="date"]`);
 for(let datePicker of datePickers){
   datePicker.value = formatDate(new Date());
+  let minDate = new Date();
+  let maxDate = addDays(minDate, 21);
+  // eslint-disable-next-line no-undef
+  flatpickr(datePicker, {
+    defaultDate: minDate,
+    minDate: minDate,
+    maxDate: maxDate,
+    locale: {
+      firstDayOfWeek: 1
+    },
+    disable: [
+      function(date) {
+        return (date.getDay() === 0 || date.getDay() === 6);
+
+      }
+    ],
+    onChange: function(selectedDates, dateStr) {
+      // eslint-disable-next-line no-undef
+      value = dateStr;
+    },
+  });
 }
 
 function activatePage(pageId) {
@@ -41,6 +80,35 @@ function initPage() {
   activatePage(pageMatchingHash);
 }
 initPage();
+
+function mixOrder(arr) {
+  for (let i = arr.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1));
+    let temp = arr[i];
+    arr[i] = arr[j];
+    arr[j] = temp;
+  }
+}
+
+document.querySelectorAll('.icon-refresh').forEach(function(icon) {
+  icon.addEventListener('click', function() {
+    document.querySelectorAll(`input[name="date"]`).forEach(function(input){
+      input.value = formatDate(new Date());
+    });
+    const table = document.querySelector('.table-mix');
+    const tableRows = document.querySelector('.table-xl').getElementsByTagName('tr');
+    let rows = Array.from(tableRows).slice(1);
+    mixOrder(rows);
+    for (let row of rows) {
+      table.appendChild(row);
+      row.classList.add('tr-style');
+      row.classList.add('table-xl');
+      row.querySelectorAll('td').forEach(function(td) {
+        td.style.textAlign = 'center';
+      });
+    }
+  });
+});
 
 /* Modal functions */
 
@@ -68,6 +136,7 @@ document.addEventListener('keyup', function(e) {
 });
 
 function modalOpener(modal) {
+
   document.querySelectorAll('#overlay > *').forEach(function(modal) {
     modal.classList.remove('show');
   });
@@ -75,8 +144,20 @@ function modalOpener(modal) {
   document.querySelector(modal).classList.add('show');
 }
 
-document.querySelector('.sidebar-manager').addEventListener('click', function(){
+document.querySelector('.js--manager').addEventListener('click', function(){
   modalOpener('#myModal');
+});
+
+const searchInput = document.querySelector('.search-input');
+
+searchInput.addEventListener('focus', function() {
+  document.querySelector('.icon-message').classList.add('hide');
+  this.placeholder = '';
+});
+
+searchInput.addEventListener('blur', function() {
+  document.querySelector('.icon-message.hide').classList.remove('hide');
+  this.placeholder = 'Enter Your msg';
 });
 
 
@@ -129,11 +210,6 @@ function sidebarListeners() {
 }
 sidebarListeners();
 
-const searchInput = document.querySelector('.search-input');
-searchInput.addEventListener('focus', function() {
-  document.querySelector('.icon-message').classList.add('hide');
-});
-
 /* Chart */
 
 let ctx = document.getElementById('myChart').getContext('2d');
@@ -180,4 +256,5 @@ let chart = new Chart(ctx, {
     }
   }
 });
+
 

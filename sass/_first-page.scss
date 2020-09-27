@@ -1,6 +1,6 @@
 /* Header */
 
-.nav {
+.nav-top {
   position: fixed;
   top: 0;
   left: 0;
@@ -21,7 +21,7 @@
     margin: 0;
 
     &__wallet {
-      border-left: $header-border-style;
+      border-right: $header-border-style;
     }
 
     &__amount-of-cash {
@@ -34,7 +34,7 @@
 
     &__arrow-down {
       align-self: center;
-      border-right: $header-border-style;
+      border-left: $header-border-style;
       cursor: pointer;
     }
 
@@ -78,21 +78,50 @@
     }
 
     &__author-name {
-      color: blue;
+      color: orange;
       padding-left: 0;
       margin: 0;
       display: inline-block;
       margin: 0 10px 0 0;
     }
   }
+
+  .amount-list {
+    position: absolute;
+    padding: 0;
+    list-style-type: none;
+    width: 183px;
+    transform: translateX(-16px);
+    text-align: center;
+
+    &__item {
+      border: $header-border-style;
+      transition: $transition;
+      background-color: $color-light;
+      display: none;
+
+      &:hover {
+        background-color: orange;
+      }
+    }
+  }
+}
+
+.amount-list__item.js--amount-open {
+  display: block;
+}
+
+.amount-link {
+  transform: rotate(360deg) scaleX(-1) translateX(16px);
 }
 
 /* Sidebar */
+
 .icon-arrow-right {
   position: sticky;
   padding: 5px 2px 3px 2px;
   top: 50%;
-  font-size: 20px;
+  font-size: 18px;
   cursor: pointer;
   z-index: 3;
   background-color: orange;
@@ -128,19 +157,10 @@
     font-family: $font-logo;
   }
 
-  &__burger {
-    color: $font-color;
-    font-size: 1.5rem;
-
-    &:hover {
-      color: $color-light;
-    }
-  }
-
   &__list {
     list-style-type: none;
     color: $font-color;
-    padding: 0 0 20px 10px;
+    padding: 0 0 20px 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 
     &__item {
@@ -168,6 +188,9 @@
         color: inherit;
         text-decoration: none;
         cursor: pointer;
+        width: 100%;
+        display: block;
+
       }
 
       &:hover::before {
@@ -176,46 +199,49 @@
       }
     }
   }
+}
 
-  &__manager {
-    color: $font-color;
-    text-align: center;
-    letter-spacing: 1px;
+.manager-header {
+  color: $font-color;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.manager__wrapper {
+  display: flex;
+  justify-content: center;
+
+  &:hover {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.1);
   }
 
   &__photo {
     border-radius: 50%;
     background-size: cover;
     position: relative;
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
   }
 
-  &__manager__wrapper{
-    display: flex;
-    justify-content: center;
+  span {
+    position: relative;
+    color: $font-color;
+    vertical-align: middle;
+    text-align: center;
+    line-height: 50px;
 
-    &:hover {
-      cursor: pointer;
-      background-color: rgba(255, 255, 255, 0.1);
-    }
-
-    span {
-      position: relative;
-      color: $font-color;
-      vertical-align: middle;
-      text-align: center;
-      line-height: 50px;
-
-      &::after {
-        content: '';
-        width: 10px;
-        height: 10px;
-        background-color: lime;
-        position: absolute;
-        border-radius: 50%;
-        top: 0;
-        left: -16%;
-        z-index: 2;
-      }
+    &::after {
+      content: '';
+      width: 10px;
+      height: 10px;
+      background-color: lime;
+      position: absolute;
+      border-radius: 50%;
+      top: 0;
+      left: -16%;
+      z-index: 2;
     }
   }
 }
@@ -227,12 +253,18 @@
 }
 
 .main-wrapper {
+
   display: none;
   margin-left: 240px;
   margin-top: 100px;
-  margin: 50px 10px 20px 225px;
+  margin: 50px 10px 20px 210px;
   background-color: white;
   background-color: white;
+
+  .icon-refresh-general {
+    transform: translateY(2px);
+    display: inline-block;
+  }
 
   &__post {
     .article-header {
@@ -249,14 +281,6 @@
       height: 100px;
       border-bottom: $border-dark-style;
 
-      .icon-calendar {
-        vertical-align: middle;
-        line-height: 40px;
-        border: $border-dark-style;
-        border-left: none;
-        cursor: pointer;
-      }
-
       &__refresh {
         color: $color-light;
         padding: 10px 15px;
@@ -265,6 +289,10 @@
         border-radius: $radius;
         transition: $transition;
         cursor: pointer;
+        font-size: 14px;
+        line-height: 40px;
+        display: inline-block;
+        padding: 3px 13px 0;
 
         &:hover {
           background-color: $color-light;
@@ -282,7 +310,6 @@
 
         &:nth-child(2){
           border-left: none;
-          border-right: none;
         }
 
         &:focus {
@@ -417,6 +444,14 @@
 .link {
   text-decoration: none;
   font-weight: $font-semibold;
+}
+
+input[type=date] {
+  width: 36%;
+
+  &:first-of-type {
+    margin-left: 10px;
+  }
 }
 
 /* Personal details */
@@ -843,13 +878,13 @@ input[type=range]:focus::-ms-fill-upper {
   display: none;
 }
 
-.overlay.show{
+.overlay.show {
   display: flex;
 }
 
 .modal {
   max-width: 1100px;
-  width: 80%;
+  width: 90%;
   margin: auto;
   background-color: $color-light;
   position: relative;
@@ -868,7 +903,7 @@ input[type=range]:focus::-ms-fill-upper {
     top: 0;
     right: 0;
     position: absolute;
-    padding: 5px 7px 0 0;
+    padding: 13px 20px 0 0;
     font-size: 18px;
     cursor: pointer;
   }
@@ -877,15 +912,15 @@ input[type=range]:focus::-ms-fill-upper {
     justify-content: left;
     margin: 20px 0;
     border-bottom: $border-dark-style;
+    padding: 0 0 20px 0;
   }
 
   p:nth-child(n + 3) {
     color: $color-light;
     background-color: lighten($color-dark, 60%);
-    display: inline-block;
     font-size: 10px;
     padding: 5px 10px;
-    margin: 10px 0;
+    margin: 20px 0;
     position: relative;
 
     &::before {
@@ -909,8 +944,16 @@ input[type=range]:focus::-ms-fill-upper {
     }
   }
 
-  .chat-3 {
-    margin-bottom: 50px;
+  .chat {
+    width: 150px;
+
+    p:nth-child(3) {
+      padding-bottom: 50px;
+    }
+
+    p:nth-child(3) {
+      padding-bottom: 30px;
+    }
   }
 
   .send-msg {
@@ -951,14 +994,42 @@ input[type=range]:focus::-ms-fill-upper {
   }
 }
 
+figure {
+  display: inline-block;
+  margin: 0;
+  height: 50px;
+}
+
+figcaption {
+  display: inline-block;
+  transform: translateY(-20px);
+
+  span {
+    &::after {
+      transform: translateY(-15px);
+    }
+  }
+}
+
 .modal.show {
   display: block;
 }
 
+#search-input::placeholder {
+  padding-left: 20px;
+}
+
+.postback-info {
+  padding-left: 7px;
+}
 
 /* Media queries */
 
 @media(min-width: 300px)and(max-width: 380px) {
+  .amount-list {
+    transform: rotate(360deg) scaleX(1) translate(-16px, -205px);
+  }
+
   .checkbox-range__wrapper__range {
     height: 150px;
   }
@@ -981,8 +1052,9 @@ input[type=range]:focus::-ms-fill-upper {
     margin-top: 60px;
   }
 
-  .nav {
+  .nav-top {
     &__wrapper {
+      border-top: $header-border-style;
       transform: translateX(-40px);
     }
   }
@@ -990,7 +1062,7 @@ input[type=range]:focus::-ms-fill-upper {
   .icon-close {
     font-size: 17px;
     color: white;
-    transform: translate(32px, 1px);
+    transform: translate(24px, 2px);
     display: inline-block;
     cursor: pointer;
   }
@@ -1024,14 +1096,18 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 @media(max-width: 576px){
+  .amount-list {
+    transform: rotate(360deg) scaleX(1) translate(-16px, -205px);
+  }
+
   .main-wrapper{
-    margin: -34px 0px 50px 0px;
+    margin: -52px 0px 50px 0px;
   }
 
   .icon-close {
     font-size: 17px;
     color: white;
-    transform: translate(32px, 1px);
+    transform: translate(24px, 2px);
     display: inline-block;
     cursor: pointer;
   }
@@ -1050,7 +1126,8 @@ input[type=range]:focus::-ms-fill-upper {
     padding: 0 3px;
   }
 
-  .nav {
+  .nav-top {
+    border-top: $header-border-style;
     bottom: 0!important;
     top: initial;
     width: 100%;
@@ -1112,12 +1189,8 @@ input[type=range]:focus::-ms-fill-upper {
       margin: 4px 0;
     }
 
-    &__burger {
-      font-size: 0px;
-    }
-
     &__list {
-      padding: 0 0 10px 5px;
+      padding: 0 0 10px 0;
       margin: 0;
 
       &__item {
@@ -1136,6 +1209,10 @@ input[type=range]:focus::-ms-fill-upper {
     &__manager {
       font-size: 0.7rem;
     }
+  }
+
+  .manager-header {
+    font-size: 0.7rem;
   }
 
   form {
@@ -1244,9 +1321,17 @@ input[type=range]:focus::-ms-fill-upper {
     width: 120px;
     margin-top: 60px;
   }
+
+  textarea {
+    margin: 7px;
+  }
 }
 
 @media(min-width: 577px) and (max-width: 755px) {
+  .amount-list {
+    transform: rotate(360deg) scaleX(1) translate(-16px, -205px);
+  }
+
   .placeholders {
     width: 51%;
   }
@@ -1254,7 +1339,7 @@ input[type=range]:focus::-ms-fill-upper {
   .icon-close {
     font-size: 17px;
     color: white;
-    transform: translate(32px, 1px);
+    transform: translate(24px, 2px);
     display: inline-block;
     cursor: pointer;
   }
@@ -1264,7 +1349,8 @@ input[type=range]:focus::-ms-fill-upper {
     min-width: 100px;
   }
 
-  .nav {
+  .nav-top {
+    border-top: $header-border-style;
     bottom: 0!important;
     top: initial;
     width: 100%;
@@ -1315,7 +1401,7 @@ input[type=range]:focus::-ms-fill-upper {
   }
 
   .main-wrapper{
-    margin: -34px 0px 50px 0px;
+    margin: -52px 0px 50px 0px;
   }
 
   .sidebar {
@@ -1329,12 +1415,8 @@ input[type=range]:focus::-ms-fill-upper {
       margin: 4px 0;
     }
 
-    &__burger {
-      font-size: 0px;
-    }
-
     &__list {
-      padding: 0 0 10px 5px;
+      padding: 0 0 10px 0;
       margin: 0;
 
       &__item {
@@ -1349,10 +1431,10 @@ input[type=range]:focus::-ms-fill-upper {
         height: 23px;
       }
     }
+  }
 
-    &__manager {
-      font-size: 0.7rem;
-    }
+  .manager-header {
+    font-size: 0.7rem;
   }
 
   form {
@@ -1457,9 +1539,17 @@ input[type=range]:focus::-ms-fill-upper {
     width: 120px;
     margin-top: 60px;
   }
+
+  textarea {
+    margin: 7px;
+  }
 }
 
 @media(min-width: 577px) and (max-width: 755px) {
+  .amount-list {
+    transform: rotate(360deg) scaleX(1) translate(-16px, -205px);
+  }
+
   .sidebar {
     min-width: 100px;
     display: block;
@@ -1513,11 +1603,7 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 @media(max-height: 340px) {
-  .sidebar__manager__wrapper {
-    display: none;
-  }
-
-  .sidebar__manager {
+  .manager-wrap {
     display: none;
   }
 }
@@ -1556,14 +1642,13 @@ input[type=range]:focus::-ms-fill-upper {
   }
 
   .row-bhv:before {
-    /* Now like a table header */
     position: absolute;
-    /* Top/left values mimic padding */
     top: 6px;
     left: 6px;
     width: 45%;
     padding-right: 10px;
     white-space: nowrap;
+    color: gray;
   }
 
   /* Label the data */

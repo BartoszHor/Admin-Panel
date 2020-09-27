@@ -2,648 +2,663 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title> Project </title>
+    <title>Project</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato&family=Oswald&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
-
   <body>
     <section class="modal-section">
       <div class="overlay" id="overlay">
         <div class="modal" id="myModal">
-          <h4 class="modal-h normalized-p">ONLINE CHAT WITH YOUR PERSONAL MANAGER</h4>
-          <div class="btn-close js--close-modal"> X </div>
-            <div class="sidebar__manager__wrapper modal-manager">
-              <img src="https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?cs=srgb&dl=pexels-italo-melo-2379005.jpg&fm=jpg" class="sidebar__photo" width="50" height="50" alt="Manager photo">
-              <span class="manager p1"> Pawel</span>
+          <h1 class="modal-h normalized-p">ONLINE CHAT WITH YOUR PERSONAL MANAGER</h1>
+          <a class="btn-close js--close-modal">X</a>
+          <div class="manager__wrapper modal-manager">
+            <figure>
+              <img src="https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?cs=srgb&dl=pexels-italo-melo-2379005.jpg&fm=jpg" class="manager__wrapper__photo" alt="Manager photo">
+              <figcaption>
+              <span class="p-small"> Pawel</span>
+              </figcaption>
+            </figure>
           </div>
-          <p class="chat-1"> Hello. Can I help You somehow? </p><br>
-          <p class="chat-2"> Ye. Tell me more about Your offer. </p> <br>
-          <p class="chat-3"> Ok. Give me sec. </p><br>
+          <p class="chat"> Hello. Can I help You somehow? </p>
+          <p class="chat"> Ye. Tell me more about Your offer. </p>
+          <p class="chat"> Ok. Give me sec. </p>
           <div class="send-msg">
-            <input type="search" class="search-input" placeholder="       Enter Your msg" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your text'">
+            <input type="search" class="search-input" id="search-input" placeholder="Enter Your msg">
             <i class="icon-message"></i>
             <button type="submit" class="btn btn-send-msg"> Send </button>
           </div>
         </div>
       </div>
     </section>
-      <i class="icon-arrow-right"></i>
-      <nav class="nav">
-        <ul class="nav__wrapper">
-          <li class="icon-wallet nav__wrapper__wallet p1"></li>
-          <li class="nav__wrapper__amount-of-cash p1"> $1,500,00 </li>
-          <li class="icon-arrow-down-small nav__wrapper__arrow-down p1"></li>
-          <li class="icon-notification nav__wrapper__icon-notification p2"></li>
-          <li class="icon-personaldata nav__wrapper__icon-personaldata p1"></li>
-          <li class="nav__wrapper__author-name p1"> Max Cool</li>
-          <li class="icon-quit nav__wrapper__icon-quit p1"></li>
-        </ul>
-      </nav>
-      <nav class="sidebar">
-        <div>
-          <h1 class="sidebar__header p1">Just do IT</h1>
-          <i class="icon-close"></i>
-          <i class="fas fa-bars sidebar__burger p1"></i>
-        </div>
+    <i class="icon-arrow-right"></i>
+    <nav class="nav-top">
+      <ul class="nav-top__wrapper">
+        <li class="p-small icon-arrow-down-small nav-top__wrapper__arrow-down js--arrow-down">
+          <a href="list" aria-label="list" class="amount-link">
+          </a>
+          <ul class="amount-list">
+            <li class="amount-list__item"> $1,200,00 </li>
+            <li class="amount-list__item"> $3,500,00 </li>
+            <li class="amount-list__item"> $2,500,00 </li>
+          </ul>
+        </li>
+        <li class="nav-top__wrapper__amount-of-cash js--amount p-small"> $1,500,00 </li>
+        <li class="icon-wallet nav-top__wrapper__wallet p-small"></li>
+        <li class="icon-notification nav-top__wrapper__icon-notification p-big"></li>
+        <li class="icon-personaldata nav-top__wrapper__icon-personaldata p-small"></li>
+        <li class="nav-top__wrapper__author-name p-small"> Max Cool</li>
+        <li class="icon-quit nav-top__wrapper__icon-quit p-small"></li>
+      </ul>
+    </nav>
+    <section class="sidebar">
+      <section>
+        <h1 class="sidebar__header p-small">Just do IT</h1>
+        <a class="icon-close" aria-label="icon-close" href="#"></a>
+      </section>
+      <nav>
         <ul class="sidebar__list">
-          <li class="sidebar__list__item"><a href="#1" id="1"> <i class="icon-general header__wrapper__icon-quit p2"></i> General </a></li>
-          <li class="sidebar__list__item"><a href="#6" id="6"> <i class="icon-details header__wrapper__icon-quit p2"></i> Details </a></li>
-          <li class="sidebar__list__item"><a href="#2" id="2"> <i class="icon-links header__wrapper__icon-quit p2"></i> Links </a></li>
-          <li class="sidebar__list__item"><a href="#3" id="3"> <i class="icon-banners header__wrapper__icon-quit p2"></i> Banners </a></li>
-          <li class="sidebar__list__item"><a href="#4" id="4"> <i class="icon-personaldata header__wrapper__icon-quit p2"></i> Personal Data </a></li>
-          <li class="sidebar__list__item"><a href="#5" id="5"> <i class="icon-payout header__wrapper__icon-quit p2"></i> Payout </a></li>
-          <li class="sidebar__list__item"><a href="#7" id="7"> <i class="icon-postback header__wrapper__icon-quit p2"></i> Postback </a> </li>
+          <li class="sidebar__list__item"><a href="#1" id="1"> <i class="icon-general header__wrapper__icon-quit p-big"></i> General </a></li>
+          <li class="sidebar__list__item"><a href="#6" id="6"> <i class="icon-details header__wrapper__icon-quit p-big"></i> Details </a></li>
+          <li class="sidebar__list__item"><a href="#2" id="2"> <i class="icon-links header__wrapper__icon-quit p-big"></i> Links </a></li>
+          <li class="sidebar__list__item"><a href="#3" id="3"> <i class="icon-banners header__wrapper__icon-quit p-big"></i> Banners </a></li>
+          <li class="sidebar__list__item"><a href="#4" id="4"> <i class="icon-personaldata header__wrapper__icon-quit p-big"></i> Personal Data </a></li>
+          <li class="sidebar__list__item"><a href="#5" id="5"> <i class="icon-payout header__wrapper__icon-quit p-big"></i> Payout </a></li>
+          <li class="sidebar__list__item"><a href="#7" id="7"> <i class="icon-postback header__wrapper__icon-quit p-big"></i> Postback </a> </li>
         </ul>
-        <div class="manager">
-          <h3 class="sidebar__manager">YOUR MANAGER</h3>
-          <div class="sidebar__manager__wrapper sidebar-manager">
-            <img src="https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?cs=srgb&dl=pexels-italo-melo-2379005.jpg&fm=jpg" class="sidebar__photo" width="50" height="50" alt="Manager photo">
-            <span class="p1"> Pawel</span>
-          </div>
-        </div>
       </nav>
-      <section class="main-wrapper" data-id="1">
-        <h4 class="main-wrapper__post__title article-header"> GENERAL STATISTIC </h4>
-        <section class="dates-data">
-          <div class="main-wrapper__post__datePicker">
-            <input type="text" class="datePicker">
-            <input type="text" class="datePicker">
-            <i class="icon-calendar p1"></i>
-            <i class="icon-refresh main-wrapper__post__datePicker__refresh p1"></i>
-          </div>
-          <div class="main-wrapper__post__details">
-            <div class="main-wrapper__post__details__list">Visit Signups <span class="amount"> 124 </span></div>
-            <div class="main-wrapper__post__details__list">Net deposit <span class="amount"> 782 </span></div>
-            <div class="main-wrapper__post__details__list">FTD <span class="amount"> 984 </span></div>
-            <div class="main-wrapper__post__details__list">Turn over <span class="amount"> 500 </span></div>
-          </div>
-        </section>
-        <section class="main-wrapper__post__chart">
-          <h4 class="chart-h4">Earnings chart</h4>
-          <canvas id="myChart"></canvas>
-        </section>
-      </section>
-      <section class="main-wrapper second-wrapper" data-id="2">
-        <h4 class="main-wrapper__links__header article-header"> LINKS </h4>
-        <div class="main-wrapper__links__content">
-          <div class="main-wrapper__links__content wrap">
-            <a href="#" class="main-wrapper__links__content__btn"> + Add new </a>
-          </div>
-          <div class="main-wrapper__links__content__link">
-            <span class="link-name">Home Page</span><span class="span-link"><a href="#" class="link"> http://www.homepage.com</a>      </span>
-              <i class="icon-links link-icon"></i>
-              <i class="icon-trash link-icon"></i>
-          </div>
-          <div class="main-wrapper__links__content__link">
-            <span class="link-name">Offers</span><span class="span-link"><a href="#" class="link"> http://www.homepage/offers.com</a>      </span>
-              <i class="icon-links link-icon"></i>
-              <i class="icon-trash link-icon"></i>
-          </div>
-          <div class="main-wrapper__links__content__link">
-            <span class="link-name">Madia</span><span class="span-link"><a href="#" class="link"> http://www.homepage/media.com</a>      </span>
-              <i class="icon-links link-icon"></i>
-              <i class="icon-trash link-icon"></i>
-          </div>
-          <div class="main-wrapper__links__content__link">
-            <span class="link-name">Facebook</span><span class="span-link"><a href="#" class="link"> http://www.facebook.com</a>      </span>
-              <i class="icon-links link-icon"></i>
-              <i class="icon-trash link-icon"></i>
-          </div>
-          <div class="main-wrapper__links__content__link">
-            <span class="link-name">Google</span><span class="span-link"><a href="#" class="link"> http://www.google.com</a>      </span>
-              <i class="icon-links link-icon"></i>
-              <i class="icon-trash link-icon"></i>
-          </div>
-          <div class="main-wrapper__links__content__link">
-            <span class="link-name">Banners</span><span class="span-link"><a href="#" class="link"> http://www.homepage/banners.com</a>      </span>
-              <i class="icon-links link-icon"></i>
-              <i class="icon-trash link-icon"></i>
-          </div>
-          <div class="main-wrapper__links__content__link">
-            <span class="link-name">Links</span><span class="span-link"><a href="#" class="link"> http://www.homepage/links.com</a>      </span>
-              <i class="icon-links link-icon"></i>
-              <i class="icon-trash link-icon"></i>
-          </div>
-          <div class="main-wrapper__links__content__link">
-            <span class="link-name">Technology</span><span class="span-link"><a href="#" class="link"> http://www.homepage/technology.com</a>      </span>
-              <i class="icon-links link-icon"></i>
-              <i class="icon-trash link-icon"></i>
-          </div>
-          <div class="main-wrapper__links__content__link">
-            <span class="link-name">Twitter</span><span class="span-link"><a href="#" class="link"> http://www.twitter.com</a>      </span>
-              <i class="icon-links link-icon"></i>
-              <i class="icon-trash link-icon"></i>
-          </div>
-          <div class="main-wrapper__links__content__link">
-            <span class="link-name">Forum</span><span class="span-link"><a href="#" class="link"> http://www.homepage/forum.com</a>      </span>
-              <i class="icon-links link-icon"></i>
-              <i class="icon-trash link-icon"></i>
-          </div>
-          <div class="main-wrapper__links__content wrap">
-            <a href="#" class="main-wrapper__links__content__btn"> + Add new </a>
-          </div>
+      <section class="manager-wrap">
+        <h1 class="manager-header">YOUR MANAGER</h1>
+        <div class="manager__wrapper js--manager">
+          <figure>
+            <img src="https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?cs=srgb&dl=pexels-italo-melo-2379005.jpg&fm=jpg" class="manager__wrapper__photo" alt="Manager photo">
+            <figcaption>
+            <span class="p-small">Pawel</span>
+            </figcaption>
+          </figure>
         </div>
       </section>
-      <section class="main-wrapper second-wrapper" data-id="3">
-        <h4 class="main-wrapper__links__header article-header"> BANNERS </h4>
-        <div class="main-wrapper__links__content">
-          <div class="main-wrapper__links__content wrap">
-            <a href="#" class="main-wrapper__links__content__btn"> + Add new </a>
-          </div>
-          <div class="main-wrapper__links__content__link">
-            <span class="link-name">Front banner</span><span class="span-link"><a href="#" class="link"> http://www.banner/front.gif</a></span>
-              <i class="icon-links link-icon"></i>
-              <i class="icon-trash link-icon"></i>
-          </div>
-          <div class="main-wrapper__links__content__link">
-            <span class="link-name">Vertical banner</span><span class="span-link"><a href="#" class="link"> http://www.banner/vertical.gif</a></span>
-              <i class="icon-links link-icon"></i>
-              <i class="icon-trash link-icon"></i>
-          </div>
-          <div class="main-wrapper__links__content__link">
-            <span class="link-name">Main banners</span><span class="span-link"><a href="#" class="link"> http://www.banner/main.gif</a></span>
-              <i class="icon-links link-icon"></i>
-              <i class="icon-trash link-icon"></i>
-          </div>
-          <div class="main-wrapper__links__content__link">
-            <span class="link-name">Banner right</span><span class="span-link"><a href="#" class="link"> http://www.banner/left.gif</a></span>
-              <i class="icon-links link-icon"></i>
-              <i class="icon-trash link-icon"></i>
-          </div>
-          <div class="main-wrapper__links__content__link">
-            <span class="link-name">Banner left</span><span class="span-link"><a href="#" class="link"> http://www.banner/right.gif</a></span>
-              <i class="icon-links link-icon"></i>
-              <i class="icon-trash link-icon"></i>
-          </div>
-          <div class="main-wrapper__links__content__link">
-            <span class="link-name">Best offers</span><span class="span-link"><a href="#" class="link"> http://www.banner/offers.com</a></span>
-              <i class="icon-links link-icon"></i>
-              <i class="icon-trash link-icon"></i>
-          </div>
-          <div class="main-wrapper__links__content wrap">
-            <a href="#" class="main-wrapper__links__content__btn"> + Add new </a>
-          </div>
-        </div>
-      </section>
-      <section class="main-wrapper second-wrapper" data-id="4">
-        <h4 class="article-header"> PERSONAL DATA </h4>
-        <form class="form" action="" method="post">
-          <div class="form__row">
-            <div class="form__row__name"> Name </div>
-            <div class="form__row__input"><input class="form-input" type="text" placeholder="Name" name="name"></div>
-          </div>
-          <div class="form__row">
-            <div class="form__row__name"> Surname </div>
-            <div class="form__row__input"><input class="form-input" type="text" placeholder="Surname" name="surname"></div>
-          </div>
-          <div class="form__row">
-            <div class="form__row__name"> E-mail </div>
-            <div class="form__row__input"><input class="form-input" type="email" required placeholder="E-mail" name="email"></div>
-          </div>
-          <div class="form__row">
-            <div class="form__row__name"> Phone Number </div>
-            <div class="form__row__input"><input class="form-input" type="tel" id="phone" minlength="9" maxlength="13" placeholder="Phone number" name="phone-number"></div>
-          </div>
-          <div class="form__row">
-            <div class="form__row__name"> Skype </div>
-            <div class="form__row__input"><input class="form-input" type="text" placeholder="Skype" value="Bartosz.H" name="skype"></div>
-          </div>
-          <div class="form__row">
-            <div class="form__row__name"> MSN </div>
-            <div class="form__row__input"><input class="form-input" type="text" name="msn"></div>
-          </div>
-          <div class="form__row">
-            <div class="form__row__name"> ICQ </div>
-            <div class="form__row__input"><input class="form-input" type="text" name="icq"></div>
-          </div>
-          <div class="form__row">
-            <div class="form__row__name"> Wallet </div>
-            <div class="form__row__input"><input class="form-input" type="number" name="wallet"></div>
-          </div>
-          <div class="form__row">
-            <div class="form__row__name"> Password </div>
-            <div class="form__row__input"><input class="form-input" type="password" name="password"></div>
-          </div>
-          <div class="form__row">
-            <div class="form__row__name"> Repeat </div>
-            <div class="form__row__input"><input class="form-input" type="password" name="repeat"></div>
-          </div>
-          <div class="main-wrapper__links__content wrap">
-            <button type="submit" class="btn"> Send </button>
-          </div>
-        </form>
-      </section>
-       <section class="main-wrapper" data-id="5">
-        <h4 class="article-header"> PAYOUT HISTORY</h4>
+    </section>
+    <section class="main-wrapper" data-id="1">
+      <h1 class="main-wrapper__post__title article-header"> GENERAL STATISTIC </h1>
+      <section>
         <div class="main-wrapper__post__datePicker">
-          <input type="text" class="datePicker">
-          <input type="text" class="datePicker">
-          <i class="icon-calendar p1"></i>
-          <i class="icon-refresh main-wrapper__post__datePicker__refresh p1"></i>
+            <input type="text" name="date" class="datePicker">
+            <input type="text" name="date" class="datePicker">
+            <i class="icon-refresh main-wrapper__post__datePicker__refresh icon-refresh-general p-small"></i>
         </div>
-        <div class="table-wrap">
-          <table>
-            <tbody>
-              <tr>
-                <th scope="col">Date</th>
-                <th scope="col">Amount($)</th>
-                <th scope="col">Deal</th>
-                <th scope="col">Account</th>
-              </tr>
-              <tr>
-                <td>20/09/2020</td>
-                <td>32,323.00</td>
-                <td>clia(242)</td>
-                <td>bank</td>
-              </tr>
-              <tr>
-                <td>20/09/2020</td>
-                <td>32,323.00</td>
-                <td>clia(242)</td>
-                <td>bank</td>
-              </tr>
-              <tr>
-                <td>20/09/2020</td>
-                <td>32,323.00</td>
-                <td>clia(242)</td>
-                <td>bank</td>
-              </tr>
-              <tr>
-                <td>20/09/2020</td>
-                <td>32,323.00</td>
-                <td>clia(242)</td>
-                <td>bank</td>
-              </tr>
-              <tr>
-                <td>20/09/2020</td>
-                <td>32,323.00</td>
-                <td>clia(242)</td>
-                <td>bank</td>
-              </tr>
-              <tr>
-                <td>20/09/2020</td>
-                <td>32,323.00</td>
-                <td>clia(242)</td>
-                <td>bank</td>
-              </tr>
-              <tr>
-                <td>20/09/2020</td>
-                <td>32,323.00</td>
-                <td>clia(242)</td>
-                <td>bank</td>
-              </tr>
-              <tr>
-                <td>20/09/2020</td>
-                <td>32,323.00</td>
-                <td>clia(242)</td>
-                <td>bank</td>
-              </tr>
-              <tr>
-                <td>20/09/2020</td>
-                <td>32,323.00</td>
-                <td>clia(242)</td>
-                <td>bank</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="pseudo-slider">
-          <i class="icon-arrow-left pseudo-slider-arrow-left"></i>
-          <ul class="pseudo-slider-list">
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
-            <li>5</li>
-            <li>6</li>
-            <li>7</li>
-            <li>8</li>
-            <li>9</li>
-          </ul>
-          <i class="icon-arrow-right pseudo-slider-arrow-right"></i>
+        <div class="main-wrapper__post__details">
+          <div class="main-wrapper__post__details__list">Visit Signups <span class="amount"> 124 </span></div>
+          <div class="main-wrapper__post__details__list">Net deposit <span class="amount"> 782 </span></div>
+          <div class="main-wrapper__post__details__list">FTD <span class="amount"> 984 </span></div>
+          <div class="main-wrapper__post__details__list">Turn over <span class="amount"> 500 </span></div>
         </div>
       </section>
-      <section class="main-wrapper" data-id="6">
-        <h4 class="article-header"> DETAILS </h4>
-        <div class="main-wrapper__post__datePicker">
-          <input type="text" class="datePicker">
-          <input type="text" class="datePicker">
-          <i class="icon-calendar p1"></i>
-          <i class="icon-refresh main-wrapper__post__datePicker__refresh p1"></i>
-        </div>
-        <div class="table-wrap">
-          <table class="table-xl">
-            <tbody class="table-xl">
-              <tr class="table-xl hide">
-                <th class="table-xl" scope="col">Track Name</th>
-                <th class="table-xl" scope="col">Date</th>
-                <th class="table-xl" scope="col">Visits</th>
-                <th class="table-xl" scope="col">Unique</th>
-                <th class="table-xl" scope="col">Signups</th>
-                <th class="table-xl" scope="col">FTD</th>
-                <th class="table-xl" scope="col">Depositories</th>
-                <th class="table-xl" scope="col">Deposits($)</th>
-                <th class="table-xl" scope="col">Payout</th>
-                <th class="table-xl" scope="col">Turnover</th>
-                <th class="table-xl" scope="col">Deals</th>
-              </tr>
-              <tr class="table-xl tr-style">
-                <td class="table-xl row-bhv">front/test</td>
-                <td class="table-xl row-bhv">20/09/2020</td>
-                <td class="table-xl row-bhv">232</td>
-                <td class="table-xl row-bhv">115</td>
-                <td class="table-xl row-bhv">22</td>
-                <td class="table-xl row-bhv">12</td>
-                <td class="table-xl row-bhv">6</td>
-                <td class="table-xl row-bhv">32,002.00</td>
-                <td class="table-xl row-bhv">234.00</td>
-                <td class="table-xl row-bhv">323,002.00</td>
-                <td class="table-xl row-bhv">kpb(200)</td>
-              </tr>
-              <tr class="table-xl tr-style">
-                <td class="table-xl row-bhv">front/test</td>
-                <td class="table-xl row-bhv">20/09/2020</td>
-                <td class="table-xl row-bhv">232</td>
-                <td class="table-xl row-bhv">115</td>
-                <td class="table-xl row-bhv">22</td>
-                <td class="table-xl row-bhv">12</td>
-                <td class="table-xl row-bhv">6</td>
-                <td class="table-xl row-bhv">32,002.00</td>
-                <td class="table-xl row-bhv">234.00</td>
-                <td class="table-xl row-bhv">323,002.00</td>
-                <td class="table-xl row-bhv">kpb(200)</td>
-              </tr>
-              <tr class="table-xl tr-style">
-                <td class="table-xl row-bhv">front/test</td>
-                <td class="table-xl row-bhv">20/09/2020</td>
-                <td class="table-xl row-bhv">232</td>
-                <td class="table-xl row-bhv">115</td>
-                <td class="table-xl row-bhv">22</td>
-                <td class="table-xl row-bhv">12</td>
-                <td class="table-xl row-bhv">6</td>
-                <td class="table-xl row-bhv">32,002.00</td>
-                <td class="table-xl row-bhv">234.00</td>
-                <td class="table-xl row-bhv">323,002.00</td>
-                <td class="table-xl row-bhv">kpb(200)</td>
-              </tr>
-              <tr class="table-xl tr-style">
-                <td class="table-xl row-bhv">front/test</td>
-                <td class="table-xl row-bhv">20/09/2020</td>
-                <td class="table-xl row-bhv">232</td>
-                <td class="table-xl row-bhv">115</td>
-                <td class="table-xl row-bhv">22</td>
-                <td class="table-xl row-bhv">12</td>
-                <td class="table-xl row-bhv">6</td>
-                <td class="table-xl row-bhv">32,002.00</td>
-                <td class="table-xl row-bhv">234.00</td>
-                <td class="table-xl row-bhv">323,002.00</td>
-                <td class="table-xl row-bhv">kpb(200)</td>
-              </tr>
-              <tr class="table-xl tr-style">
-                <td class="table-xl row-bhv">front/test</td>
-                <td class="table-xl row-bhv">20/09/2020</td>
-                <td class="table-xl row-bhv">232</td>
-                <td class="table-xl row-bhv">115</td>
-                <td class="table-xl row-bhv">22</td>
-                <td class="table-xl row-bhv">12</td>
-                <td class="table-xl row-bhv">6</td>
-                <td class="table-xl row-bhv">32,002.00</td>
-                <td class="table-xl row-bhv">234.00</td>
-                <td class="table-xl row-bhv">323,002.00</td>
-                <td class="table-xl row-bhv">kpb(200)</td>
-              </tr>
-              <tr class="table-xl tr-style">
-                <td class="table-xl row-bhv">front/test</td>
-                <td class="table-xl row-bhv">20/09/2020</td>
-                <td class="table-xl row-bhv">232</td>
-                <td class="table-xl row-bhv">115</td>
-                <td class="table-xl row-bhv">22</td>
-                <td class="table-xl row-bhv">12</td>
-                <td class="table-xl row-bhv">6</td>
-                <td class="table-xl row-bhv">32,002.00</td>
-                <td class="table-xl row-bhv">234.00</td>
-                <td class="table-xl row-bhv">323,002.00</td>
-                <td class="table-xl row-bhv">kpb(200)</td>
-              </tr>
-              <tr class="table-xl tr-style">
-                <td class="table-xl row-bhv">front/test</td>
-                <td class="table-xl row-bhv">20/09/2020</td>
-                <td class="table-xl row-bhv">232</td>
-                <td class="table-xl row-bhv">115</td>
-                <td class="table-xl row-bhv">22</td>
-                <td class="table-xl row-bhv">12</td>
-                <td class="table-xl row-bhv">6</td>
-                <td class="table-xl row-bhv">32,002.00</td>
-                <td class="table-xl row-bhv">234.00</td>
-                <td class="table-xl row-bhv">323,002.00</td>
-                <td class="table-xl row-bhv">kpb(200)</td>
-              </tr>
-              <tr class="table-xl tr-style">
-                <td class="table-xl row-bhv">front/test</td>
-                <td class="table-xl row-bhv">20/09/2020</td>
-                <td class="table-xl row-bhv">232</td>
-                <td class="table-xl row-bhv">115</td>
-                <td class="table-xl row-bhv">22</td>
-                <td class="table-xl row-bhv">12</td>
-                <td class="table-xl row-bhv">6</td>
-                <td class="table-xl row-bhv">32,002.00</td>
-                <td class="table-xl row-bhv">234.00</td>
-                <td class="table-xl row-bhv">323,002.00</td>
-                <td class="table-xl row-bhv">kpb(200)</td>
-              </tr>
-              <tr class="table-xl tr-style">
-                <td class="table-xl row-bhv">front/test</td>
-                <td class="table-xl row-bhv">20/09/2020</td>
-                <td class="table-xl row-bhv">232</td>
-                <td class="table-xl row-bhv">115</td>
-                <td class="table-xl row-bhv">22</td>
-                <td class="table-xl row-bhv">12</td>
-                <td class="table-xl row-bhv">6</td>
-                <td class="table-xl row-bhv">32,002.00</td>
-                <td class="table-xl row-bhv">234.00</td>
-                <td class="table-xl row-bhv">323,002.00</td>
-                <td class="table-xl row-bhv">kpb(200)</td>
-              </tr>
-              <tr class="table-xl tr-style">
-                <td class="table-xl row-bhv">front/test</td>
-                <td class="table-xl row-bhv">20/09/2020</td>
-                <td class="table-xl row-bhv">232</td>
-                <td class="table-xl row-bhv">115</td>
-                <td class="table-xl row-bhv">22</td>
-                <td class="table-xl row-bhv">12</td>
-                <td class="table-xl row-bhv">6</td>
-                <td class="table-xl row-bhv">32,002.00</td>
-                <td class="table-xl row-bhv">234.00</td>
-                <td class="table-xl row-bhv">323,002.00</td>
-                <td class="table-xl row-bhv">kpb(200)</td>
-              </tr>
-              <tr class="table-xl tr-style">
-                <td class="table-xl row-bhv">front/test</td>
-                <td class="table-xl row-bhv">20/09/2020</td>
-                <td class="table-xl row-bhv">232</td>
-                <td class="table-xl row-bhv">115</td>
-                <td class="table-xl row-bhv">22</td>
-                <td class="table-xl row-bhv">12</td>
-                <td class="table-xl row-bhv">6</td>
-                <td class="table-xl row-bhv">32,002.00</td>
-                <td class="table-xl row-bhv">234.00</td>
-                <td class="table-xl row-bhv">323,002.00</td>
-                <td class="table-xl row-bhv">kpb(200)</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="pseudo-slider">
-          <i class="icon-arrow-left pseudo-slider-arrow-left"></i>
-          <ul class="pseudo-slider-list">
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
-            <li>5</li>
-            <li>6</li>
-            <li>7</li>
-            <li>8</li>
-            <li>9</li>
-          </ul>
-          <i class="icon-arrow-right pseudo-slider-arrow-right"></i>
-        </div>
+      <section class="main-wrapper__post__chart">
+        <h2 class="chart-h4">Earnings chart</h2>
+        <canvas id="myChart"></canvas>
       </section>
-      <section class="main-wrapper" data-id="7">
-        <h4 class="article-header"> NEW POSTBACK </h4>
-        <p class="p1"> You can insert some parameters in this postback </p>
-        <form action="" method="post">
-          <div class="postback-wrapper">
-            <div class="placeholders">
-              <div class="normalized-p signup"> Signup </div>
-              <textarea placeholder="Your details" name="detils"> Your details </textarea>
-            </div>
-            <div class="placeholders">
-              <div class="normalized-p deposit"> Deposit </div>
-              <textarea placeholder="Your deposit details" name="depo-detils"> Your deposit details </textarea>
-            </div>
+    </section>
+    <section class="main-wrapper second-wrapper" data-id="2">
+      <h1 class="main-wrapper__links__header article-header"> LINKS </h1>
+      <div class="main-wrapper__links__content">
+        <div class="main-wrapper__links__content wrap">
+          <a href="#" class="main-wrapper__links__content__btn"> + Add new </a>
+        </div>
+        <div class="main-wrapper__links__content__link">
+          <span class="link-name">Home Page</span><span class="span-link"><a href="#" class="link"> http://www.homepage.com</a>      </span>
+          <i class="icon-links link-icon"></i>
+          <i class="icon-trash link-icon"></i>
+        </div>
+        <div class="main-wrapper__links__content__link">
+          <span class="link-name">Offers</span><span class="span-link"><a href="#" class="link"> http://www.homepage/offers.com</a>      </span>
+          <i class="icon-links link-icon"></i>
+          <i class="icon-trash link-icon"></i>
+        </div>
+        <div class="main-wrapper__links__content__link">
+          <span class="link-name">Madia</span><span class="span-link"><a href="#" class="link"> http://www.homepage/media.com</a>      </span>
+          <i class="icon-links link-icon"></i>
+          <i class="icon-trash link-icon"></i>
+        </div>
+        <div class="main-wrapper__links__content__link">
+          <span class="link-name">Facebook</span><span class="span-link"><a href="#" class="link"> http://www.facebook.com</a></span>
+          <i class="icon-links link-icon"></i>
+          <i class="icon-trash link-icon"></i>
+        </div>
+        <div class="main-wrapper__links__content__link">
+          <span class="link-name">Google</span><span class="span-link"><a href="#" class="link"> http://www.google.com</a></span>
+          <i class="icon-links link-icon"></i>
+          <i class="icon-trash link-icon"></i>
+        </div>
+        <div class="main-wrapper__links__content__link">
+          <span class="link-name">Banners</span><span class="span-link"><a href="#" class="link"> http://www.homepage/banners.com</a>      </span>
+          <i class="icon-links link-icon"></i>
+          <i class="icon-trash link-icon"></i>
+        </div>
+        <div class="main-wrapper__links__content__link">
+          <span class="link-name">Links</span><span class="span-link"><a href="#" class="link"> http://www.homepage/links.com</a>      </span>
+          <i class="icon-links link-icon"></i>
+          <i class="icon-trash link-icon"></i>
+        </div>
+        <div class="main-wrapper__links__content__link">
+          <span class="link-name">Technology</span><span class="span-link"><a href="#" class="link"> http://www.homepage/technology.com</a>      </span>
+          <i class="icon-links link-icon"></i>
+          <i class="icon-trash link-icon"></i>
+        </div>
+        <div class="main-wrapper__links__content__link">
+          <span class="link-name">Twitter</span><span class="span-link"><a href="#" class="link"> http://www.twitter.com</a>      </span>
+          <i class="icon-links link-icon"></i>
+          <i class="icon-trash link-icon"></i>
+        </div>
+        <div class="main-wrapper__links__content__link">
+          <span class="link-name">Forum</span><span class="span-link"><a href="#" class="link"> http://www.homepage/forum.com</a>      </span>
+          <i class="icon-links link-icon"></i>
+          <i class="icon-trash link-icon"></i>
+        </div>
+        <div class="main-wrapper__links__content wrap">
+          <a href="#" class="main-wrapper__links__content__btn"> + Add new </a>
+        </div>
+      </div>
+    </section>
+    <section class="main-wrapper second-wrapper" data-id="3">
+      <h1 class="main-wrapper__links__header article-header"> BANNERS </h1>
+      <div class="main-wrapper__links__content">
+        <div class="main-wrapper__links__content wrap">
+          <a href="#" class="main-wrapper__links__content__btn"> + Add new </a>
+        </div>
+        <div class="main-wrapper__links__content__link">
+          <span class="link-name">Front banner</span><span class="span-link"><a href="#" class="link"> http://www.banner/front.gif</a></span>
+          <i class="icon-links link-icon"></i>
+          <i class="icon-trash link-icon"></i>
+        </div>
+        <div class="main-wrapper__links__content__link">
+          <span class="link-name">Vertical banner</span><span class="span-link"><a href="#" class="link"> http://www.banner/vertical.gif</a></span>
+          <i class="icon-links link-icon"></i>
+          <i class="icon-trash link-icon"></i>
+        </div>
+        <div class="main-wrapper__links__content__link">
+          <span class="link-name">Main banners</span><span class="span-link"><a href="#" class="link"> http://www.banner/main.gif</a></span>
+          <i class="icon-links link-icon"></i>
+          <i class="icon-trash link-icon"></i>
+        </div>
+        <div class="main-wrapper__links__content__link">
+          <span class="link-name">Banner right</span><span class="span-link"><a href="#" class="link"> http://www.banner/left.gif</a></span>
+          <i class="icon-links link-icon"></i>
+          <i class="icon-trash link-icon"></i>
+        </div>
+        <div class="main-wrapper__links__content__link">
+          <span class="link-name">Banner left</span><span class="span-link"><a href="#" class="link"> http://www.banner/right.gif</a></span>
+          <i class="icon-links link-icon"></i>
+          <i class="icon-trash link-icon"></i>
+        </div>
+        <div class="main-wrapper__links__content__link">
+          <span class="link-name">Best offers</span><span class="span-link"><a href="#" class="link"> http://www.banner/offers.com</a></span>
+          <i class="icon-links link-icon"></i>
+          <i class="icon-trash link-icon"></i>
+        </div>
+        <div class="main-wrapper__links__content wrap">
+          <a href="#" class="main-wrapper__links__content__btn"> + Add new </a>
+        </div>
+      </div>
+    </section>
+    <section class="main-wrapper second-wrapper" data-id="4">
+      <h1 class="article-header"> PERSONAL DATA </h1>
+      <form class="form" action="" method="post">
+        <div class="form__row">
+          <div class="form__row__name"> Name </div>
+          <div class="form__row__input"><input class="form-input" type="text" placeholder="Name" name="name"></div>
+        </div>
+        <div class="form__row">
+          <div class="form__row__name"> Surname </div>
+          <div class="form__row__input"><input class="form-input" type="text" placeholder="Surname" name="surname"></div>
+        </div>
+        <div class="form__row">
+          <div class="form__row__name"> E-mail </div>
+          <div class="form__row__input"><input class="form-input" type="email" required placeholder="E-mail" name="email"></div>
+        </div>
+        <div class="form__row">
+          <div class="form__row__name"> Phone Number </div>
+          <div class="form__row__input"><input class="form-input" type="tel" id="phone" minlength="9" maxlength="13" placeholder="Phone number" name="phone-number"></div>
+        </div>
+        <div class="form__row">
+          <div class="form__row__name"> Skype </div>
+          <div class="form__row__input"><input class="form-input" type="text" placeholder="Skype" value="Bartosz.H" name="skype"></div>
+        </div>
+        <div class="form__row">
+          <div class="form__row__name"> MSN </div>
+          <div class="form__row__input"><input class="form-input" type="text" name="msn"></div>
+        </div>
+        <div class="form__row">
+          <div class="form__row__name"> ICQ </div>
+          <div class="form__row__input"><input class="form-input" type="text" name="icq"></div>
+        </div>
+        <div class="form__row">
+          <div class="form__row__name"> Wallet </div>
+          <div class="form__row__input"><input class="form-input" type="number" name="wallet"></div>
+        </div>
+        <div class="form__row">
+          <div class="form__row__name"> Password </div>
+          <div class="form__row__input"><input class="form-input" type="password" name="password"></div>
+        </div>
+        <div class="form__row">
+          <div class="form__row__name"> Repeat </div>
+          <div class="form__row__input"><input class="form-input" type="password" name="repeat"></div>
+        </div>
+        <div class="main-wrapper__links__content wrap">
+          <button type="submit" class="btn"> Send </button>
+        </div>
+      </form>
+    </section>
+    <section class="main-wrapper" data-id="5">
+      <h1 class="article-header">PAYOUT HISTORY</h1>
+      <div class="main-wrapper__post__datePicker">
+        <input type="text" name="date" class="datePicker">
+        <input type="text" name="date" class="datePicker">
+        <i class="icon-refresh main-wrapper__post__datePicker__refresh p-small"></i>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <tbody>
+            <tr>
+              <th scope="col">Date</th>
+              <th scope="col">Amount($)</th>
+              <th scope="col">Deal</th>
+              <th scope="col">Account</th>
+            </tr>
+            <tr>
+              <td>20/09/2020</td>
+              <td>32,323.00</td>
+              <td>clia(242)</td>
+              <td>bank</td>
+            </tr>
+            <tr>
+              <td>20/09/2020</td>
+              <td>32,323.00</td>
+              <td>clia(242)</td>
+              <td>bank</td>
+            </tr>
+            <tr>
+              <td>20/09/2020</td>
+              <td>32,323.00</td>
+              <td>clia(242)</td>
+              <td>bank</td>
+            </tr>
+            <tr>
+              <td>21/09/2020</td>
+              <td>32,323.00</td>
+              <td>clia(242)</td>
+              <td>bank</td>
+            </tr>
+            <tr>
+              <td>20/09/2020</td>
+              <td>32,323.00</td>
+              <td>clia(242)</td>
+              <td>bank</td>
+            </tr>
+            <tr>
+              <td>20/09/2020</td>
+              <td>32,323.00</td>
+              <td>clia(242)</td>
+              <td>bank</td>
+            </tr>
+            <tr>
+              <td>20/09/2020</td>
+              <td>32,323.00</td>
+              <td>clia(242)</td>
+              <td>bank</td>
+            </tr>
+            <tr>
+              <td>20/09/2020</td>
+              <td>32,323.00</td>
+              <td>clia(242)</td>
+              <td>bank</td>
+            </tr>
+            <tr>
+              <td>20/09/2020</td>
+              <td>32,323.00</td>
+              <td>clia(242)</td>
+              <td>bank</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="pseudo-slider">
+        <i class="icon-arrow-left pseudo-slider-arrow-left"></i>
+        <ul class="pseudo-slider-list">
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+          <li>6</li>
+          <li>7</li>
+          <li>8</li>
+          <li>9</li>
+        </ul>
+        <i class="icon-arrow-right pseudo-slider-arrow-right"></i>
+      </div>
+    </section>
+    <section class="main-wrapper" data-id="6">
+      <h1 class="article-header"> DETAILS </h1>
+      <div class="main-wrapper__post__datePicker">
+        <input type="text" name="date" class="datePicker">
+        <input type="text" name="date" class="datePicker">
+        <i class="icon-refresh main-wrapper__post__datePicker__refresh p-small"></i>
+      </div>
+      <div class="table-wrap">
+        <table class="table-xl table-mix">
+          <tbody class="table-xl">
+            <tr class="table-xl hide">
+              <th class="table-xl" scope="col">Track Name</th>
+              <th class="table-xl" scope="col">Date</th>
+              <th class="table-xl" scope="col">Visits</th>
+              <th class="table-xl" scope="col">Unique</th>
+              <th class="table-xl" scope="col">Signups</th>
+              <th class="table-xl" scope="col">FTD</th>
+              <th class="table-xl" scope="col">Depositories</th>
+              <th class="table-xl" scope="col">Deposits($)</th>
+              <th class="table-xl" scope="col">Payout</th>
+              <th class="table-xl" scope="col">Turnover</th>
+              <th class="table-xl" scope="col">Deals</th>
+            </tr>
+            <tr class="table-xl tr-style">
+              <td class="table-xl row-bhv">Test</td>
+              <td class="table-xl row-bhv">20/09/2020</td>
+              <td class="table-xl row-bhv">0</td>
+              <td class="table-xl row-bhv">115</td>
+              <td class="table-xl row-bhv">22</td>
+              <td class="table-xl row-bhv">12</td>
+              <td class="table-xl row-bhv">6</td>
+              <td class="table-xl row-bhv">32,002.00</td>
+              <td class="table-xl row-bhv">234.00</td>
+              <td class="table-xl row-bhv">323,002.00</td>
+              <td class="table-xl row-bhv">kpb(200)</td>
+            </tr>
+            <tr class="table-xl tr-style">
+              <td class="table-xl row-bhv">Test2</td>
+              <td class="table-xl row-bhv">21/09/2001</td>
+              <td class="table-xl row-bhv">322</td>
+              <td class="table-xl row-bhv">115</td>
+              <td class="table-xl row-bhv">22</td>
+              <td class="table-xl row-bhv">22</td>
+              <td class="table-xl row-bhv">7</td>
+              <td class="table-xl row-bhv">32,002.00</td>
+              <td class="table-xl row-bhv">214.00</td>
+              <td class="table-xl row-bhv">23,002.00</td>
+              <td class="table-xl row-bhv">kpb(9000)</td>
+            </tr>
+            <tr class="table-xl tr-style">
+              <td class="table-xl row-bhv">Front</td>
+              <td class="table-xl row-bhv">20/09/2020</td>
+              <td class="table-xl row-bhv">122</td>
+              <td class="table-xl row-bhv">115</td>
+              <td class="table-xl row-bhv">22</td>
+              <td class="table-xl row-bhv">12</td>
+              <td class="table-xl row-bhv">6</td>
+              <td class="table-xl row-bhv">32,002.00</td>
+              <td class="table-xl row-bhv">234.00</td>
+              <td class="table-xl row-bhv">323,002.00</td>
+              <td class="table-xl row-bhv">kpb(200)</td>
+            </tr>
+            <tr class="table-xl tr-style">
+              <td class="table-xl row-bhv">Front</td>
+              <td class="table-xl row-bhv">20/09/2020</td>
+              <td class="table-xl row-bhv">999</td>
+              <td class="table-xl row-bhv">115</td>
+              <td class="table-xl row-bhv">22</td>
+              <td class="table-xl row-bhv">12</td>
+              <td class="table-xl row-bhv">6</td>
+              <td class="table-xl row-bhv">32,002.00</td>
+              <td class="table-xl row-bhv">234.00</td>
+              <td class="table-xl row-bhv">323,002.00</td>
+              <td class="table-xl row-bhv">kpb(200)</td>
+            </tr>
+            <tr class="table-xl tr-style">
+              <td class="table-xl row-bhv">Test2</td>
+              <td class="table-xl row-bhv">21/09/2001</td>
+              <td class="table-xl row-bhv">322</td>
+              <td class="table-xl row-bhv">115</td>
+              <td class="table-xl row-bhv">22</td>
+              <td class="table-xl row-bhv">22</td>
+              <td class="table-xl row-bhv">7</td>
+              <td class="table-xl row-bhv">32,002.00</td>
+              <td class="table-xl row-bhv">214.00</td>
+              <td class="table-xl row-bhv">23,002.00</td>
+              <td class="table-xl row-bhv">kpb(9000)</td>
+            </tr>
+            <tr class="table-xl tr-style">
+              <td class="table-xl row-bhv">Front</td>
+              <td class="table-xl row-bhv">20/09/2020</td>
+              <td class="table-xl row-bhv">232</td>
+              <td class="table-xl row-bhv">115</td>
+              <td class="table-xl row-bhv">22</td>
+              <td class="table-xl row-bhv">12</td>
+              <td class="table-xl row-bhv">6</td>
+              <td class="table-xl row-bhv">32,002.00</td>
+              <td class="table-xl row-bhv">234.00</td>
+              <td class="table-xl row-bhv">323,002.00</td>
+              <td class="table-xl row-bhv">kpb(200)</td>
+            </tr>
+            <tr class="table-xl tr-style">
+              <td class="table-xl row-bhv">Logo</td>
+              <td class="table-xl row-bhv">10/01/2020</td>
+              <td class="table-xl row-bhv">5532</td>
+              <td class="table-xl row-bhv">125</td>
+              <td class="table-xl row-bhv">22</td>
+              <td class="table-xl row-bhv">11</td>
+              <td class="table-xl row-bhv">3</td>
+              <td class="table-xl row-bhv">222,002.00</td>
+              <td class="table-xl row-bhv">234.00</td>
+              <td class="table-xl row-bhv">113,002.00</td>
+              <td class="table-xl row-bhv">kpb(100)</td>
+            </tr>
+            <tr class="table-xl tr-style">
+              <td class="table-xl row-bhv">Test2</td>
+              <td class="table-xl row-bhv">21/09/2001</td>
+              <td class="table-xl row-bhv">322</td>
+              <td class="table-xl row-bhv">115</td>
+              <td class="table-xl row-bhv">22</td>
+              <td class="table-xl row-bhv">22</td>
+              <td class="table-xl row-bhv">7</td>
+              <td class="table-xl row-bhv">32,002.00</td>
+              <td class="table-xl row-bhv">214.00</td>
+              <td class="table-xl row-bhv">23,002.00</td>
+              <td class="table-xl row-bhv">kpb(9000)</td>
+            </tr>
+            <tr class="table-xl tr-style">
+              <td class="table-xl row-bhv">Logo</td>
+              <td class="table-xl row-bhv">10/01/2020</td>
+              <td class="table-xl row-bhv">5532</td>
+              <td class="table-xl row-bhv">125</td>
+              <td class="table-xl row-bhv">22</td>
+              <td class="table-xl row-bhv">11</td>
+              <td class="table-xl row-bhv">3</td>
+              <td class="table-xl row-bhv">222,002.00</td>
+              <td class="table-xl row-bhv">234.00</td>
+              <td class="table-xl row-bhv">113,002.00</td>
+              <td class="table-xl row-bhv">kpb(100)</td>
+            </tr>
+            <tr class="table-xl tr-style">
+              <td class="table-xl row-bhv">Front</td>
+              <td class="table-xl row-bhv">20/09/2020</td>
+              <td class="table-xl row-bhv">232</td>
+              <td class="table-xl row-bhv">115</td>
+              <td class="table-xl row-bhv">22</td>
+              <td class="table-xl row-bhv">12</td>
+              <td class="table-xl row-bhv">6</td>
+              <td class="table-xl row-bhv">32,002.00</td>
+              <td class="table-xl row-bhv">234.00</td>
+              <td class="table-xl row-bhv">323,002.00</td>
+              <td class="table-xl row-bhv">kpb(200)</td>
+            </tr>
+            <tr class="table-xl tr-style">
+              <td class="table-xl row-bhv">Logo</td>
+              <td class="table-xl row-bhv">10/01/2020</td>
+              <td class="table-xl row-bhv">5532</td>
+              <td class="table-xl row-bhv">125</td>
+              <td class="table-xl row-bhv">22</td>
+              <td class="table-xl row-bhv">11</td>
+              <td class="table-xl row-bhv">3</td>
+              <td class="table-xl row-bhv">222,002.00</td>
+              <td class="table-xl row-bhv">234.00</td>
+              <td class="table-xl row-bhv">113,002.00</td>
+              <td class="table-xl row-bhv">kpb(100)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="pseudo-slider">
+        <i class="icon-arrow-left pseudo-slider-arrow-left"></i>
+        <ul class="pseudo-slider-list">
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+          <li>6</li>
+          <li>7</li>
+          <li>8</li>
+          <li>9</li>
+        </ul>
+        <i class="icon-arrow-right pseudo-slider-arrow-right"></i>
+      </div>
+    </section>
+    <section class="main-wrapper" data-id="7">
+      <h1 class="article-header"> NEW POSTBACK </h1>
+      <p class="postback-info"> You can insert some parameters in this postback </p>
+      <form action="" method="post">
+        <div class="postback-wrapper">
+          <div class="placeholders">
+            <div class="normalized-p signup"> Signup </div>
+            <textarea placeholder="Your details" name="detils"> Your details </textarea>
           </div>
-          <div class="select-wrapper">
-            <div class="select-wrapper__select">
-              <div class="normalized-p postback-type"> Postback type </div>
-              <select name="postback" id="postback-type0">
-                <option value="none" selected disabled hidden> B2B(http://...) </option>
-                <option value="http://postback-random.com"> http://postback-random.com </option>
-                <option value="http://postback-random2.com"> http://postback-random2.com </option>
-                <option value="http://postback-random3.com"> http://postback-random3.com</option>
-              </select>
-            </div>
-            <div class="select-wrapper__select">
-              <div class="normalized-p postback-type"> To countries </div>
-              <select name="postback" id="postback-type1">
-                <option value="none" selected disabled hidden> Select countries </option>
-                <optgroup label="Schengen">
-                  <option value="http://postback-random.com"> Poland </option>
-                  <option value="http://postback-random2.com"> Germany </option>
-                  <option value="http://postback-random3.com"> Belgium </option>
-                </optgroup>
-                <optgroup label="Non-Schengen">
-                  <option value="http://postback-random.com"> Marocco </option>
-                  <option value="http://postback-random2.com"> Thailand </option>
-                  <option value="http://postback-random3.com"> Vietnam </option>
-                </optgroup>
-              </select>
-            </div>
-            <div class="select-wrapper__select">
-              <div class="normalized-p postback-type"> Sending options </div>
-              <select name="postback" id="postback-type2">
-                <option value="none" selected disabled hidden> Select </option>
-                <option value="http://postback-random.com"> E-mail </option>
-                <option value="http://postback-random2.com"> Letter </option>
-                <option value="http://postback-random3.com"> Peaguin </option>
-              </select>
-            </div>
+          <div class="placeholders">
+            <div class="normalized-p deposit"> Deposit </div>
+            <textarea placeholder="Your deposit details" name="depo-detils"> Your deposit details </textarea>
           </div>
-          <div class="checkbox-range__wrapper">
-            <div class="checkbox-range__wrapper__checkbox">
-              <div class="normalized-p not-wrap"><span class="not">NOT </span>send statuses </div>
-              <fieldset>
-                <legend></legend>
-                <div class="checkbox-item">
-                  <input type="checkbox" name="checkbox-item" value="checkNumber">
-                  <span class="checkbox-span">checkNumber</span>
-                </div>
-                <div class="checkbox-item">
-                  <input type="checkbox" name="checkbox-item" value="noAnswear">
-                  <span class="checkbox-span">noAnswear</span>
-                </div>
-                <div class="checkbox-item">
-                  <input type="checkbox" name="checkbox-item" value="noCall">
-                  <span class="checkbox-span">noCall</span>
-                </div>
-                <div class="checkbox-item">
-                  <input type="checkbox" name="checkbox-item" value="callAgain">
-                  <span class="checkbox-span">callAgain</span>
-                </div>
-                <div class="checkbox-item">
-                  <input type="checkbox" name="checkbox-item" value="checkNumber">
-                  <span class="checkbox-span">checkNumber</span>
-                </div>
-                <div class="checkbox-item">
-                  <input type="checkbox" name="checkbox-item" value="noAnswear">
-                  <span class="checkbox-span">noAnswear</span>
-                </div>
-                <div class="checkbox-item">
-                  <input type="checkbox" name="checkbox-item" value="noCall">
-                  <span class="checkbox-span">noCall</span>
-                </div>
-                <div class="checkbox-item">
-                  <input type="checkbox" name="checkbox-item" value="callAgain">
-                  <span class="checkbox-span">callAgain</span>
-                </div>
-                <div class="checkbox-item">
-                  <input type="checkbox" name="checkbox-item" value="checkNumber">
-                  <span class="checkbox-span">checkNumber</span>
-                </div>
-                <div class="checkbox-item">
-                  <input type="checkbox" name="checkbox-item" value="noAnswear">
-                  <span class="checkbox-span">noAnswear</span>
-                </div>
-                <div class="checkbox-item">
-                  <input type="checkbox" name="checkbox-item" value="noCall">
-                  <span class="checkbox-span">noCall</span>
-                </div>
-                <div class="checkbox-item">
-                  <input type="checkbox" name="checkbox-item" value="callAgain">
-                  <span class="checkbox-span">callAgain</span>
-                </div>
-                <div class="checkbox-item">
-                  <input type="checkbox" name="checkbox-item" value="checkNumber">
-                  <span class="checkbox-span">checkNumber</span>
-                </div>
-                <div class="checkbox-item">
-                  <input type="checkbox" name="checkbox-item" value="noAnswear">
-                  <span class="checkbox-span">noAnswear</span>
-                </div>
-                <div class="checkbox-item">
-                  <input type="checkbox" name="checkbox-item" value="noCall">
-                  <span class="checkbox-span">noCall</span>
-                </div>
-                <div class="checkbox-item">
-                  <input type="checkbox" name="checkbox-item" value="callAgain">
-                  <span class="checkbox-span">callAgain</span>
-                </div>
-              </fieldset>
-            </div>
-              <div class="checkbox-range__wrapper__range">
-                <div class="normalized-p postback-type range"> Send after: </div>
-                  <input type="range">
+        </div>
+        <div class="select-wrapper">
+          <div class="select-wrapper__select">
+            <div class="normalized-p postback-type"> Postback type </div>
+            <select name="postback" id="postback-type0">
+              <option value="none" selected disabled hidden> B2B(http://...) </option>
+              <option value="http://postback-random.com"> http://postback-random.com </option>
+              <option value="http://postback-random2.com"> http://postback-random2.com </option>
+              <option value="http://postback-random3.com"> http://postback-random3.com</option>
+            </select>
+          </div>
+          <div class="select-wrapper__select">
+            <div class="normalized-p postback-type"> To countries </div>
+            <select name="postback" id="postback-type1">
+              <option value="none" selected disabled hidden> Select countries </option>
+              <optgroup label="Schengen">
+                <option value="http://postback-random.com"> Poland </option>
+                <option value="http://postback-random2.com"> Germany </option>
+                <option value="http://postback-random3.com"> Belgium </option>
+              </optgroup>
+              <optgroup label="Non-Schengen">
+                <option value="http://postback-random.com"> Marocco </option>
+                <option value="http://postback-random2.com"> Thailand </option>
+                <option value="http://postback-random3.com"> Vietnam </option>
+              </optgroup>
+            </select>
+          </div>
+          <div class="select-wrapper__select">
+            <div class="normalized-p postback-type"> Sending options </div>
+            <select name="postback" id="postback-type2">
+              <option value="none" selected disabled hidden> Select </option>
+              <option value="http://postback-random.com"> E-mail </option>
+              <option value="http://postback-random2.com"> Letter </option>
+              <option value="http://postback-random3.com"> Peaguin </option>
+            </select>
+          </div>
+        </div>
+        <div class="checkbox-range__wrapper">
+          <div class="checkbox-range__wrapper__checkbox">
+            <div class="normalized-p not-wrap"><span class="not">NOT </span>send statuses </div>
+            <fieldset>
+              <legend></legend>
+              <div class="checkbox-item">
+                <input type="checkbox" name="checkbox-item" value="checkNumber">
+                <span class="checkbox-span">checkNumber</span>
               </div>
-            </div>
-            <div class="submit-button">
-              <button type="submit" class="btn"> Send </button>
-            </div>
-          </form>
-        </section>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
-  <script src="js/script.js"></script>
+              <div class="checkbox-item">
+                <input type="checkbox" name="checkbox-item" value="noAnswear">
+                <span class="checkbox-span">noAnswear</span>
+              </div>
+              <div class="checkbox-item">
+                <input type="checkbox" name="checkbox-item" value="noCall">
+                <span class="checkbox-span">noCall</span>
+              </div>
+              <div class="checkbox-item">
+                <input type="checkbox" name="checkbox-item" value="callAgain">
+                <span class="checkbox-span">callAgain</span>
+              </div>
+              <div class="checkbox-item">
+                <input type="checkbox" name="checkbox-item" value="checkNumber">
+                <span class="checkbox-span">checkNumber</span>
+              </div>
+              <div class="checkbox-item">
+                <input type="checkbox" name="checkbox-item" value="noAnswear">
+                <span class="checkbox-span">noAnswear</span>
+              </div>
+              <div class="checkbox-item">
+                <input type="checkbox" name="checkbox-item" value="noCall">
+                <span class="checkbox-span">noCall</span>
+              </div>
+              <div class="checkbox-item">
+                <input type="checkbox" name="checkbox-item" value="callAgain">
+                <span class="checkbox-span">callAgain</span>
+              </div>
+              <div class="checkbox-item">
+                <input type="checkbox" name="checkbox-item" value="checkNumber">
+                <span class="checkbox-span">checkNumber</span>
+              </div>
+              <div class="checkbox-item">
+                <input type="checkbox" name="checkbox-item" value="noAnswear">
+                <span class="checkbox-span">noAnswear</span>
+              </div>
+              <div class="checkbox-item">
+                <input type="checkbox" name="checkbox-item" value="noCall">
+                <span class="checkbox-span">noCall</span>
+              </div>
+              <div class="checkbox-item">
+                <input type="checkbox" name="checkbox-item" value="callAgain">
+                <span class="checkbox-span">callAgain</span>
+              </div>
+              <div class="checkbox-item">
+                <input type="checkbox" name="checkbox-item" value="checkNumber">
+                <span class="checkbox-span">checkNumber</span>
+              </div>
+              <div class="checkbox-item">
+                <input type="checkbox" name="checkbox-item" value="noAnswear">
+                <span class="checkbox-span">noAnswear</span>
+              </div>
+              <div class="checkbox-item">
+                <input type="checkbox" name="checkbox-item" value="noCall">
+                <span class="checkbox-span">noCall</span>
+              </div>
+              <div class="checkbox-item">
+                <input type="checkbox" name="checkbox-item" value="callAgain">
+                <span class="checkbox-span">callAgain</span>
+              </div>
+            </fieldset>
+          </div>
+          <div class="checkbox-range__wrapper__range">
+            <div class="normalized-p postback-type range"> Send after: </div>
+            <input type="range">
+          </div>
+        </div>
+        <div class="submit-button">
+          <button type="submit" class="btn"> Send </button>
+        </div>
+      </form>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>
