@@ -1,12 +1,12 @@
 /* General - main page funactions */
 
 document.querySelectorAll('.amount-list__item').forEach(function(item) {
-  item.addEventListener('click', function() {
+  item.addEventListener('click', function(event) {
     document.querySelector('.js--amount').innerHTML = this.innerHTML;
   });
 });
 
-document.querySelector('.js--arrow-down').addEventListener('click', function() {
+document.querySelector('.js--arrow-down').addEventListener('click', function(event) {
   document.querySelectorAll('.amount-list__item').forEach(function(item){
     item.classList.toggle('js--amount-open');
   });
