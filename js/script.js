@@ -2,6 +2,7 @@
 
 document.querySelectorAll('.amount-list__item').forEach(function(item) {
   item.addEventListener('click', function(event) {
+    event.preventDefault();
     document.querySelector('.js--amount').innerHTML = this.innerHTML;
   });
 });
